@@ -1,10 +1,10 @@
-<div class="row" id="main-content-new">
+                        <div class="row" id="main-content-new">
                             <div class="main-content-course-header">
                                 <span><a href="#">Chủ đề xem nhiều</a></span>
                             </div>
                             <div class="col-sm-4">
                                 <div class="course">
-                                    <div class="course-img"><img src="<?php echo URL_BASE.'templates/default';?>/image/img1.jpg" alt="Khoa hoc 1" width="100%" height="inherit"></div>
+                                    <div class="course-img"><img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img1.jpg" alt="Khoa hoc 1" width="100%" height="inherit"></div>
                                     <div class="course-social">
                                         Like: <span class="glyphicon glyphicon-heart-empty"></span>
                                         Share: <i class="fa fa-share-alt" aria-hidden="true"></i>
@@ -25,7 +25,7 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <img src="<?php echo URL_BASE.'templates/default';?>/image/img3.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
+                                        <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img3.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
                                     </div>
                                     <div class="course-social">
                                         Like:
@@ -57,7 +57,7 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <img src="<?php echo URL_BASE.'templates/default';?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
+                                        <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
                                     </div>
                                     <div class="course-social">
                                         Like:
@@ -95,7 +95,7 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <img src="<?php echo URL_BASE.'templates/default';?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
+                                        <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
                                     </div>
                                     <div class="course-social">
                                         Like:
@@ -127,7 +127,7 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <img src="<?php echo URL_BASE.'templates/default';?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
+                                        <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
                                     </div>
                                     <div class="course-social">
                                         Like:
@@ -159,7 +159,7 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <img src="<?php echo URL_BASE.'templates/default';?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
+                                        <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
                                     </div>
                                     <div class="course-social">
                                         Like:
