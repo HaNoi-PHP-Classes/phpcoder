@@ -7,8 +7,8 @@ class Default_Controllers_Index extends Libs_Controller{
     }
     
     public function index(){
-        $objProduct = new Default_Models_tblProduct();
-        $this->view->arrProduct = $objProduct->getAllProduct();
+        //$objProduct = new Default_Models_tblProduct();
+        //$this->view->arrProduct = $objProduct->getAllProduct();
         $this->view->render('index/index');
     }
     
