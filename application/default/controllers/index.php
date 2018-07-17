@@ -23,7 +23,7 @@ class Default_Controllers_Index extends Libs_Controller{
         }
     }
     
-    public function list(){
+    public function listcourse(){
         if ($_REQUEST['id'] != "") {
             $this->view-> id = $id;
             $this->view->render("index/list");

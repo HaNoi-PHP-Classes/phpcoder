@@ -80,34 +80,6 @@
     </div>
     <!--end #top-->
 
-   <div id="id01" class="modal">
-        <form class="modal-content animate" action="/action_page.php">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <img src="<?php echo URL_BASE.'templates/default';?>/image/img_avatar2.png?>" alt="Avatar" class="avatar">
-            </div>
-
-            <div class="container">
-                <label for="uname"><b>Tên đăng nhập</b></label>
-                <input type="text" placeholder="Nhập tên đăng nhập" name="uname" required>
-
-                <label for="psw"><b>Mật khẩu</b></label>
-                <input type="password" placeholder="Nhập mật khẩu" name="psw" required>
-            
-                <button type="submit">Đăng nhập</button>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Ghi nhớ tài khoản
-                </label>
-            </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Hủy</button>
-                <span class="psw">Quên <a href="#">mật khẩu?</a></span>
-            </div>
-        </form>
-    </div>
-
-
     <nav class="navbar navbar-inverse" id="menu" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -136,15 +108,15 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="<?php echo URL_BASE.'list/?id=1';?>">Bắt đầu với lập trình web</a>
+                                    <a href="<?php echo URL_BASE.'listcourse/?id=1';?>">Bắt đầu với lập trình web</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="<?php echo URL_BASE.'list/?id=2';?>">Lập trình với PHP</a>
+                                    <a href="<?php echo URL_BASE.'listcourse/?id=2';?>">Lập trình với PHP</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="<?php echo URL_BASE.'list/?id=3';?>">Lập trình với Javascript</a>
+                                    <a href="<?php echo URL_BASE.'listcourse/?id=3';?>">Lập trình với Javascript</a>
                                 </li>
                             </ul>
                         </li>
@@ -199,13 +171,13 @@
                                 <div class="main-right-content-header">Các chủ đề có tại php coder</div>
                                 <div class="col-sm-12 main-right-content-category">
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'list/?id=1'?>">Bắt đầu với lập trình web</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'listcourse/?id=1'?>">Bắt đầu với lập trình web</a>
                                     </div>
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'list/?id=1'?>">Lập trình web với PHP</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'listcourse/?id=1'?>">Lập trình web với PHP</a>
                                     </div>
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'list/?id=1'?>">Lập trình web với Javascript</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'listcourse/?id=1'?>">Lập trình web với Javascript</a>
                                     </div>
                                 </div>
                             </div>
@@ -265,5 +237,33 @@
         </div>
     </div>
     <!--end #footer-->
+
+    <div id="id01" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="<?php echo URL_BASE.'templates/default'.'/image/img_avatar2.png';?>" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container-form">
+                <label for="uname"><b>Tên đăng nhập</b></label>
+                <input type="text" placeholder="Nhập tên đăng nhập" name="uname" required>
+
+                <label for="psw"><b>Mật khẩu</b></label>
+                <input type="password" placeholder="Nhập mật khẩu" name="psw" required>
+            
+                <button type="submit">Đăng nhập</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Ghi nhớ tài khoản
+                </label>
+            </div>
+
+            <div class="container-form" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Hủy</button>
+                <span class="psw">Quên <a href="#">mật khẩu?</a></span>
+            </div>
+        </form>
+    </div>
+
 </body>
 </html>
