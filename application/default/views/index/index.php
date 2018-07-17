@@ -1,15 +1,30 @@
+    <div class="container-fluid bg" style="background-image: url('<?php echo URL_BASE.'templates/default';?>/image/photo.jpg')">
+        <div id="banner">
+            Content
+        </div>
+    </div>
+    <!--end #banner-->
+
+    <div class="container-fluid" id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9" id="main-content">
+                    <div class="container-fluid">                    
+
                         <div class="row" id="main-content-new">
                             <div class="main-content-course-header">
                                 <span><a href="#">Chủ đề xem nhiều</a></span>
                             </div>
                             <div class="col-sm-4">
                                 <div class="course">
-                                    <div class="course-img"><img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img1.jpg" alt="Khoa hoc 1" width="100%" height="inherit"></div>
+                                    <div class="course-img">
+                                        <a href="<?php echo URL_BASE.'course/?id=1';?>"><img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img1.jpg" alt="Khoa hoc 1" width="100%" height="inherit"></a>
+                                    </div>
                                     <div class="course-social">
                                         Like: <span class="glyphicon glyphicon-heart-empty"></span>
                                         Share: <i class="fa fa-share-alt" aria-hidden="true"></i>
                                     </div>
-                                    <div class="course-name"><a href="#">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a></div>
+                                    <div class="course-name"><a href="<?php echo URL_BASE.'course/?id=1';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a></div>
                                     <div class="course-description">Mô tả tóm tắt bài học ...</div>
                                     <div class="course-profile">
                                         <table>
@@ -25,7 +40,9 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img3.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
+                                        <a href="<?php echo URL_BASE.'course/?id=2';?>">
+                                            <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img3.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
+                                        </a>
                                     </div>
                                     <div class="course-social">
                                         Like:
@@ -34,7 +51,7 @@
                                         <i class="fa fa-share-alt" aria-hidden="true"></i>
                                     </div>
                                     <div class="course-name">
-                                        <a href="#">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
+                                        <a href="<?php echo URL_BASE.'course/?id=2';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
                                     </div>
                                     <div class="course-description">Mô tả tóm tắt bài học ...</div>
                                     <div class="course-profile">

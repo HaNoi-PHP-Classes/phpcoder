@@ -8,6 +8,7 @@
     <script src="<?php echo URL_BASE.'templates/default';?>/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/layout.css">
+    <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="<?php echo URL_BASE.'templates/default';?>/favicon.png">
     <script type="text/javascript">
@@ -48,6 +49,18 @@
                 }
             });
         });
+
+
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
     </script>
     <title>PHP Coder - Trang chủ</title>
 </head>
@@ -60,12 +73,40 @@
                 </div>
                 <div class="col-sm-6" id="top-right">
                     <span class="glyphicon glyphicon-user" style="margin-right: 5px;"></span>Đăng ký
-                    <span><i class="fa fa-sign-in" style="font-size:18px;margin-right: 5px;margin-left: 10px;"></i>Đăng nhập</span>
+                    <span><i class="fa fa-sign-in" style="font-size:18px;margin-right: 5px;margin-left: 10px;"></i><a href="#" onclick="document.getElementById('id01').style.display='block'">Đăng nhập</a></span>
                 </div>
             </div>
         </div>
     </div>
     <!--end #top-->
+
+   <div id="id01" class="modal">
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="<?php echo URL_BASE.'templates/default';?>/image/img_avatar2.png?>" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Tên đăng nhập</b></label>
+                <input type="text" placeholder="Nhập tên đăng nhập" name="uname" required>
+
+                <label for="psw"><b>Mật khẩu</b></label>
+                <input type="password" placeholder="Nhập mật khẩu" name="psw" required>
+            
+                <button type="submit">Đăng nhập</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Ghi nhớ tài khoản
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Hủy</button>
+                <span class="psw">Quên <a href="#">mật khẩu?</a></span>
+            </div>
+        </form>
+    </div>
+
 
     <nav class="navbar navbar-inverse" id="menu" role="navigation">
         <div class="container-fluid">
@@ -78,7 +119,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" style="padding-top:4px;" href="#">
+                    <a class="navbar-brand" style="padding-top:4px;" href="<?php echo URL_BASE;?>">
                         <img src="<?php echo URL_BASE.'templates/default';?>/image/logo.png" alt="logo" width="110px" height="40px">
                     </a>
                 </div>
@@ -95,15 +136,15 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#">Bắt đầu với lập trình web</a>
+                                    <a href="<?php echo URL_BASE.'list/?id=1';?>">Bắt đầu với lập trình web</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="#">Lập trình với PHP</a>
+                                    <a href="<?php echo URL_BASE.'list/?id=2';?>">Lập trình với PHP</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="#">Lập trình với Javascript</a>
+                                    <a href="<?php echo URL_BASE.'list/?id=3';?>">Lập trình với Javascript</a>
                                 </li>
                             </ul>
                         </li>
@@ -117,18 +158,19 @@
     </nav>
     <!--end nav-->
     
-    <div class="container-fluid bg" style="background-image: url('<?php echo URL_BASE.'templates/default';?>/image/photo.jpg')">
+    <!--<div class="container-fluid bg" style="background-image: url('<?php //echo URL_BASE.'templates/default';?>/image/photo.jpg')">
         <div id="banner">
             Content
         </div>
     </div>
     <!--end #banner-->
 
-    <div class="container-fluid" id="main">
+    <!--<div class="container-fluid" id="main">
         <div class="container">
             <div class="row">
                 <div class="col-sm-9" id="main-content">
-                    <div class="container-fluid" >
+                    <div class="container-fluid">
+                    -->
                         <?php
                         require TEMPLATE;
                         ?>
@@ -157,13 +199,13 @@
                                 <div class="main-right-content-header">Các chủ đề có tại php coder</div>
                                 <div class="col-sm-12 main-right-content-category">
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="#">Bắt đầu với lập trình web</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'list/?id=1'?>">Bắt đầu với lập trình web</a>
                                     </div>
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="#">Lập trình web với PHP</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'list/?id=1'?>">Lập trình web với PHP</a>
                                     </div>
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="#">Lập trình web với Javascript</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'list/?id=1'?>">Lập trình web với Javascript</a>
                                     </div>
                                 </div>
                             </div>
