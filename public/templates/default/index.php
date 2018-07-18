@@ -51,6 +51,7 @@
         });
 
 
+        //Event call login page
         // Get the modal
         var modal = document.getElementById('id01');
 
@@ -61,10 +62,20 @@
             }
         }
 
+        var modal1 = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+
     </script>
-    <title>PHP Coder - Trang chủ</title>
+    <title>PHP Coder</title>
 </head>
 <body>
+    
     <div class="container-fluid" id="top">
         <div class="container">
             <div class="row">
@@ -72,7 +83,7 @@
                     <span class="glyphicon glyphicon-earphone" style="margin-right: 5px;"></span>Hotline: 0989.910.898
                 </div>
                 <div class="col-sm-6" id="top-right">
-                    <span class="glyphicon glyphicon-user" style="margin-right: 5px;"></span>Đăng ký
+                    <span class="glyphicon glyphicon-user" style="margin-right: 5px;"></span><a href="#" onclick="document.getElementById('id02').style.display='block'"> Đăng ký </a>
                     <span><i class="fa fa-sign-in" style="font-size:18px;margin-right: 5px;margin-left: 10px;"></i><a href="#" onclick="document.getElementById('id01').style.display='block'">Đăng nhập</a></span>
                 </div>
             </div>
@@ -246,16 +257,16 @@
             </div>
 
             <div class="container-form">
-                <label for="uname"><b>Tên đăng nhập</b></label>
-                <input type="text" placeholder="Nhập tên đăng nhập" name="uname" required>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Nhập địa chỉ email" name="email" required>
 
                 <label for="psw"><b>Mật khẩu</b></label>
                 <input type="password" placeholder="Nhập mật khẩu" name="psw" required>
             
-                <button type="submit">Đăng nhập</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Ghi nhớ tài khoản
                 </label>
+                <button type="submit">Đăng nhập</button>
             </div>
 
             <div class="container-form" style="background-color:#f1f1f1">
@@ -263,6 +274,37 @@
                 <span class="psw">Quên <a href="#">mật khẩu?</a></span>
             </div>
         </form>
+    </div>
+
+    <div id="id02" class="modal">
+      <form class="modal-content" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+        <div class="container-form">
+          <h1></h1>
+          <p>Vui lòng điền thông tin để tạo tài khoản.</p>
+          <hr>
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Nhập địa chỉ email" name="email" required>
+
+          <label for="psw"><b>Mật khẩu</b></label>
+          <input type="password" placeholder="Nhập mật khẩu" name="psw" required>
+
+          <label for="psw-repeat"><b>Nhập lại mật khẩu</b></label>
+          <input type="password" placeholder="Nhập mật khẩu" name="psw-repeat" required>
+          
+          <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Ghi nhớ tài khoản
+          </label>
+
+          <p>Chính sách về tài khoản <a href="#" style="color:dodgerblue">Chính sách</a>.</p>
+
+          <div class="clearfix">
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>
     </div>
 
 </body>

@@ -21,6 +21,7 @@
     border: none;
     cursor: pointer;
     width: 100%;
+    font-weight: bold;
 }
 
 .container-form button:hover {
@@ -148,7 +149,13 @@ span.psw {
         display: block;
         float: none;
     }
-    .cancelbtn {
+    .cancelbtn,.signupbtn {
         width: 100%;
     }
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
