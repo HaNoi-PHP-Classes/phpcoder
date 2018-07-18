@@ -301,7 +301,7 @@
           <p>Chính sách về tài khoản <a href="#" style="color:dodgerblue">Chính sách</a>.</p>
 
           <div class="clearfix">
-            <button type="submit" class="signupbtn">Sign Up</button>
+            <button type="submit" class="signupbtn">Đăng ký</button>
           </div>
         </div>
       </form>

@@ -1,10 +1,62 @@
-<div class="icon-bar">
-        <a href="#" class="facebook"><i class="fa fa-facebook"><br>10</i></a> 
+    <style type="text/css">
+        .icon-bar {
+        position: fixed;
+        top: 45%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 13px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 23px;
+        }
+        .icon-bar span{
+            font-size:14px;
+        }
+
+        .icon-bar a:hover {
+            background-color: #000;
+        }
+
+        .facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .google {
+            background: #dd4b39;
+            color: white;
+        }
+
+        .linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+        .youtube {
+            background: #bb0000;
+            color: white;
+        }
+    </style>
+
+    <div class="icon-bar">
+        <a href="#" class="facebook"><i class="fa fa-facebook"><br><span>200</span></i></a> 
         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
         <a href="#" class="google"><i class="fa fa-google"></i></a> 
         <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
         <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
     </div>
+
 	     <div class="container-fluid" id="main">
         <div class="container">
             <div class="row">
@@ -17,8 +69,8 @@
                         </div>
 
 						<div class="row main-content-course">
-                            <div class="main-content-course-header">
-                                <span><a href="#">CURD - Tạo, Đọc, Cập nhật, Xóa dữ liệu các bản ghi trong cơ sở dữ liệu</a></span>
+                            <div class="main-content-course-header" style="border-bottom:1px solid #fff;">
+                                <span style="background-color:#fff;padding-left:0px;"><a href="#" style="color:#000;">CURD - Tạo, Đọc, Cập nhật, Xóa dữ liệu các bản ghi trong cơ sở dữ liệu</a></span>
                             </div>
                             <div class="main-content-course-profile">
                                 <div>Ngày cập nhật: 17/7/2018 | Ngày viết: 10/7/2018 | Tác giả: ThoPN</div>
