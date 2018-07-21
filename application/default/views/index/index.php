@@ -5,6 +5,17 @@
     </div>
     <!--end #banner-->
 
+    <script type="text/javascript">
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); 
+          js.id = id;
+          js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script> 
     <div class="container-fluid" id="main">
         <div class="container">
             <div class="row">
@@ -21,8 +32,9 @@
                                         <a href="<?php echo URL_BASE.'course/?id=1';?>"><img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img1.jpg" alt="Khoa hoc 1" width="100%" height="inherit"></a>
                                     </div>
                                     <div class="course-social">
-                                        Like: <span class="glyphicon glyphicon-heart-empty"></span>
-                                        Share: <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                        <!--Like: <span class="glyphicon glyphicon-heart-empty"></span>
+                                        Share: <i class="fa fa-share-alt" aria-hidden="true"></i>-->
+                                        <div class="fb-like" data-href="<?php echo URL_BASE.'course/?id=1';?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                                     </div>
                                     <div class="course-name"><a href="<?php echo URL_BASE.'course/?id=1';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a></div>
                                     <div class="course-description">Mô tả tóm tắt bài học ...</div>

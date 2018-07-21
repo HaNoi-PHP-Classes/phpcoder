@@ -50,17 +50,33 @@
     </style>
 
     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
+    <script>
+        (function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0';
+          js = d.createElement(s); 
+          js.id = id;
+          js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0';
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+
+        $(function(){
+            var url = window.location.href;
+            var apiUrl = 'https://graph.facebook.com/?ids='+url;
+
+            $.ajax({url: apiUrl, success: function(result){
+
+                $.each( result, function( key, val ) {
+                    console.log(key + ' - ' + val['share']['share_count']);
+                    var shareCount = val['share']['share_count'];
+                    $(".share-count").html(shareCount);
+                });
+            }});
+        });
     </script>
 
     <div class="icon-bar">
-        <a href="#" class="facebook"><i class="fa fa-facebook"><br><span class="count">200</span></i></a> 
+        <a href="#" class="facebook"><i class="fa fa-facebook"><br><span class="share-count"></span></i></a> 
         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
         <a href="#" class="google"><i class="fa fa-google"></i></a> 
         <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
