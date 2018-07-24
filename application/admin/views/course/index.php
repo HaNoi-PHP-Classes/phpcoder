@@ -40,10 +40,11 @@
 						<div class="canvas-wrapper">
 								<!--Lấy các bản ghi từ CSDL-->
 								<?php
-								if($this->num>0){
-								 	$stmt = $this->stmt;
+								if($this->numCourse>0){
+								 	$course = $this->course;
 								    echo "<table class='table table-hover table-responsive table-bordered'>";
 								        echo "<tr>";
+								        	echo "<th><input type='checkbox' name='chkall'/></th>";
 								            echo "<th>Khóa học</th>";
 								            echo "<th>Giá</th>";
 								            echo "<th>Mô tả</th>";
@@ -51,22 +52,33 @@
 								            echo "<th>Chức năng</th>";
 								        echo "</tr>";
 								 
-								        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+								        while ($row = $course->fetch(PDO::FETCH_ASSOC)){
 								 
 								            extract($row);
-								 
+								 			
 								            echo "<tr>";
-								                echo "<td>{$name}</td>";
+								            	echo "<td><input type='checkbox' name='chkall'/></td>";
+								                echo "<td><a href='#'>{$name}</a></td>";
 								                echo "<td>{$price}</td>";
 								                echo "<td>{$description}</td>";
 								                echo "<td>";
-								                    //$category->id = $category_id;
-								                    //$category->readName();
-								                    //echo $category->name;
+								                    $this->category->id = $category_id;
+								                    $this->category->getCategoryNameById();
+								                    echo $this->category->name;
 								                echo "</td>";
 								 
 								                echo "<td>";
 								                    // read one, edit and delete button will be here
+								                	 
+													// edit product button
+													echo "<a href='update_product.php?id={$id}' class='btn btn-info'>";
+													    echo "<span class='glyphicon glyphicon-edit'></span> Sửa";
+													echo "</a>&nbsp;";
+													 
+													// delete product button
+													echo "<a delete-id='{$id}' class='btn btn-danger'>";
+													    echo "<span class='glyphicon glyphicon-remove'></span> Xóa";
+													echo "</a>";
 								                echo "</td>";
 								 
 								            echo "</tr>";
@@ -76,11 +88,62 @@
 								    echo "</table>";
 								 
 								    // paging buttons will be here
+								    // the page where this paging is used
+									$page_url = URL_BASE. "admin/course/?";
+									 
+									// count all courses in the database to calculate total pages
+									$total_rows = $this->total_rows;
+
+									echo "<ul class='pagination'>";
+ 
+										// button for first page
+										if($this->page>1){
+										    echo "<li><a href='{$page_url}' title='Về trang đầu.'>";
+										        echo "Đầu";
+										    echo "</a></li>";
+										}
+										 
+										// calculate total pages
+										$total_pages = ceil($total_rows / $this->records_per_page);
+										 
+										// range of links to show
+										$range = 2;
+										 
+										// display links to 'range of pages' around 'current page'
+										$initial_num = $this->page - $range;
+										$condition_limit_num = ($this->page + $range)  + 1;
+										 
+										for ($x=$initial_num; $x<$condition_limit_num; $x++) {
+										 
+										    // be sure '$x is greater than 0' AND 'less than or equal to the $total_pages'
+										    if (($x > 0) && ($x <= $total_pages)) {
+										 
+										        // current page
+										        if ($x == $this->page) {
+										            echo "<li class='active'><a href=\"#\">$x <span class=\"sr-only\">(current)</span></a></li>";
+										        } 
+										 
+										        // not current page
+										        else {
+										            echo "<li><a href='{$page_url}page=$x'>$x</a></li>";
+										        }
+										    }
+										}
+										 
+										// button for last page
+										if($this->page<$total_pages){
+										    echo "<li><a href='" .$page_url. "page={$total_pages}' title='Last page is {$total_pages}.'>";
+										        echo "Cuối";
+										    echo "</a></li>";
+										}
+									 
+									echo "</ul>";
+
 								}
 								 
 								// tell the user there are no products
 								else{
-								    echo "<div class='alert alert-info'>No products found.</div>";
+								    echo "<div class='alert alert-info'>Không tìm thấy khóa học nào.</div>";
 								}
 								
 								?>
