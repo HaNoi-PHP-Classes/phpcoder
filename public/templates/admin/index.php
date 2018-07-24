@@ -14,6 +14,7 @@
     <!--JS source-->
     <script src="<?php echo URL_BASE;?>templates/admin/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo URL_BASE;?>templates/admin/js/bootstrap.min.js"></script>
+    <script src="<?php echo URL_BASE;?>templates/admin/js/bootbox.min.js"></script>
     <script src="<?php echo URL_BASE;?>templates/admin/js/custom.js"></script>
     <link rel="icon" href="<?php echo URL_BASE.'templates/admin';?>/favicon.png">
 </head>
@@ -104,12 +105,12 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li><a href="widgets.html"><em class="fa fa-calendar">&nbsp;</em> Widgets</a></li>
-			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
-			<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
-			<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+			<li class="active"><a href="<?php echo URL_BASE;?>admin"><em class="fa fa-dashboard">&nbsp;</em> Bảng điều khiển</a></li>
+			<li><a href="<?php echo URL_BASE;?>admin/course"><em class="glyphicon glyphicon-th-list">&nbsp;</em> Khóa học</a></li>
+			<li><a href="#"><em class="glyphicon glyphicon-list-alt">&nbsp;</em> Danh mục khóa học</a></li>
+			<li><a href="#"><em class="glyphicon glyphicon-user">&nbsp;</em> Quản lý user</a></li>
+			<li><a href="#"><em class="glyphicon glyphicon-bell">&nbsp;</em> Thông báo </a></li>
+			<li class="parent "><a dat a-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-1">
@@ -124,62 +125,14 @@
 					</a></li>
 				</ul>
 			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Thoát</a></li>
 		</ul>
 	</div><!--/.sidebar-->
 
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-		<div class="row">
-			<ol class="breadcrumb">
-				<li><a href="#">
-					<em class="fa fa-home"></em>
-				</a></li>
-				<li class="active">Dashboard</li>
-			</ol>
-		</div><!--/.row-->
-        
-        <div class="panel panel-container">
-			<div class="row">
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-					<div class="panel panel-teal panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-shopping-cart color-blue"></em>
-							<div class="large">120</div>
-							<div class="text-muted">New Orders</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-					<div class="panel panel-blue panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-comments color-orange"></em>
-							<div class="large">52</div>
-							<div class="text-muted">Comments</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-					<div class="panel panel-orange panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-users color-teal"></em>
-							<div class="large">24</div>
-							<div class="text-muted">New Users</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-					<div class="panel panel-red panel-widget ">
-						<div class="row no-padding"><em class="fa fa-xl fa-search color-red"></em>
-							<div class="large">25.2k</div>
-							<div class="text-muted">Page Views</div>
-						</div>
-					</div>
-				</div>
-			</div><!--/.row-->
-		</div>
-
-        <div class="row">
-            <?php
+    	<?php
             require TEMPLATE;
-            ?>
-        </div>
+        ?>
     </div>	<!--/.main-->
 
 </body>
