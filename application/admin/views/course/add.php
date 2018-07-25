@@ -15,11 +15,6 @@
 					</div>
 					<div class="panel-body">
 						<div class="canvas-wrapper">
-							<?php
-								if (isset($_SESSION['msg'])) {
-									echo $_SESSION['msg'];
-								}
-							?>
 							<!-- HTML form for creating a course -->
 							<form action="<?php echo htmlspecialchars(URL_BASE.'admin/course/addprocess');?>" method="post" enctype="multipart/form-data">
 							 

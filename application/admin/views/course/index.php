@@ -33,11 +33,11 @@
 								    echo "<table class='table table-hover table-responsive table-bordered'>";
 								        echo "<tr>";
 								        	echo "<th><input type='checkbox' name='chkall'/></th>";
-								            echo "<th>Khóa học</th>";
-								            echo "<th>Giá</th>";
-								            echo "<th>Mô tả</th>";
-								            echo "<th>Danh mục</th>";
-								            echo "<th>Chức năng</th>";
+								            echo "<th style='text-align:center'>Khóa học</th>";
+								            echo "<th style='text-align:center'>Giá</th>";
+								            echo "<th style='text-align:center'>Mô tả</th>";
+								            echo "<th style='text-align:center'>Danh mục</th>";
+								            echo "<th style='text-align:center'>Chức năng</th>";
 								        echo "</tr>";
 								 
 								        while ($row = $course->fetch(PDO::FETCH_ASSOC)){
@@ -55,17 +55,17 @@
 								                    echo $this->category->name;
 								                echo "</td>";
 								 
-								                echo "<td>";
+								                echo "<td align='center'>";
 								                    // read one, edit and delete button will be here
 								                	 
 													// edit product button
-													echo "<a href='update_product.php?id={$id}' class='btn btn-info'>";
-													    echo "<span class='glyphicon glyphicon-edit'></span> Sửa";
-													echo "</a>&nbsp;";
+													echo "<a href='update_product.php?id={$id}'>";
+													    echo "<span class='glyphicon glyphicon-edit'></span>";
+													echo "</a>&nbsp;&nbsp;&nbsp;";
 													 
 													// delete product button
-													echo "<a delete-id='{$id}' class='btn btn-danger'>";
-													    echo "<span class='glyphicon glyphicon-remove'></span> Xóa";
+													echo "<a href='delete-id='{$id}'>";
+													    echo "<span class='glyphicon glyphicon-remove'></span>";
 													echo "</a>";
 								                echo "</td>";
 								 

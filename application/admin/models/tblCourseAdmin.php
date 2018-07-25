@@ -37,13 +37,14 @@ class Admin_Models_tblCourseAdmin extends Libs_Model{
 
     public function createCourse(){
         $query = "INSERT INTO courses SET name=:name, price=:price, description=:description, created=:created, category_id=:category_id";
+        //$query = "INSERT INTO courses SET price=:price, created=:created, category_id=:category_id";
 
-        $stmt->$this->model->conn->prepare($query);
+        $stmt = $this->model->conn->prepare($query);
 
         //Làm sạch dữ liệu của người dùng trước khi tiến hành xử lý
         $this->name = htmlspecialchars(strip_tags($this->name));
         $this->price = htmlspecialchars(strip_tags($this->price));
-        $this->description = htmlspecialchars(strip_tags($this->description));
+        $this->description = $this->description;
         $this->category_id = htmlspecialchars(strip_tags($this->category_id));
         $this->timestamp = date('Y-m-d H:i:s');
 
