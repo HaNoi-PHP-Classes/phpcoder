@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +20,7 @@
     <script src="<?php echo URL_BASE;?>templates/admin/js/bootstrap.min.js"></script>
     <script src="<?php echo URL_BASE;?>templates/admin/js/bootbox.min.js"></script>
     <script src="<?php echo URL_BASE;?>templates/admin/js/custom.js"></script>
+    <script src="<?php echo URL_BASE;?>templates/admin/ckeditor/ckeditor.js"></script>
     <link rel="icon" href="<?php echo URL_BASE.'templates/admin';?>/favicon.png">
 </head>
 <body>
@@ -37,7 +41,6 @@
 						<ul class="dropdown-menu dropdown-messages">
 							<li>
 								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
 									</a>
 									<div class="message-body"><small class="pull-right">3 mins ago</small>
 										<a href="#"><strong>John Doe</strong> commented on <strong>your photo</strong>.</a>
@@ -47,7 +50,6 @@
 							<li class="divider"></li>
 							<li>
 								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
 									</a>
 									<div class="message-body"><small class="pull-right">1 hour ago</small>
 										<a href="#">New message from <strong>Jane Doe</strong>.</a>

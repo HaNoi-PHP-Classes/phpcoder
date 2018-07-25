@@ -28,6 +28,37 @@ class Admin_Controllers_Course extends Libs_Controller{
         $this->view->render('course/index');
     }
 
+    public function add(){
+        $categoryObj = new Admin_Models_tblCategoryAdmin();
+        $category = $categoryObj->getCategory();
+        $this->view->category = $category;
+        $this->view->render("course/add");
+    }
+
+    public function addprocess(){
+        //Lấy dữ liệu trên form người dùng nhập
+        /*if ($_POST) {
+            $course = new Admin_Models_tblCourseAdmin();
+            $course->name = $_POST['name'];
+            $course->price = $_POST['price'];
+            $course->description = $_POST['description'];
+            $course->category_id = $_POST['category_id'];
+
+            $this->view->data = $course->name."<br>".$course->price."<br>".$course->description."<br>".$course->category_id."<br>";
+
+            //$this->view->render("course/process");
+            if($course->createCourse()){
+                $_SESSION['msg'] = "<div class='alert alert-success'>Thêm mới khóa học thành công.</div>";
+                $this->redir(URL_BASE."admin/course/add");
+            }else{
+                $_SESSION['msg'] = "<div class='alert alert-success'>Thêm mới khóa học thất bại.</div>";
+                $this->redir(URL_BASE."admin/course/add");
+            }
+        }*/
+        $_SESSION['msg'] = "<div class='alert alert-success'>Thêm mới khóa học thành công.</div>";
+        $this->redir(URL_BASE."admin/course/add");
+    }
+
 
 }
 

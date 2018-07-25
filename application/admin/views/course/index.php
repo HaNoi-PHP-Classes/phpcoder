@@ -11,32 +11,20 @@
 			<div class="col-md-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Quản lý khóa học
-						<ul class="pull-right panel-settings panel-button-tab-right">
-							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-								<em class="fa fa-cogs"></em>
+						<b>Quản lý khóa học</b>
+						<span class="pull-right clickable panel-button-tab-left">
+							<a href='<?php echo URL_BASE?>admin/course/add' class='btn btn-primary pull-right'>
+								<span class="glyphicon glyphicon-plus"></span> Thêm
 							</a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li>
-										<ul class="dropdown-settings">
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 1
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 2
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 3
-											</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+							<!--<a href='<?php //echo URL_BASE?>admin/course/deleteselect' class='btn btn-danger pull-right'>
+								<span class="glyphicon glyphicon-remove"></span> Xóa
+							</a>-->
+						</span>
+					</div>	
+					
 					<div class="panel-body">
+						
+
 						<div class="canvas-wrapper">
 								<!--Lấy các bản ghi từ CSDL-->
 								<?php

@@ -7,6 +7,13 @@ class Libs_Controller {
     public function __construct() {
         $this->view = new Libs_View();
     }
+
+    public function redir($url){
+    	if ($url != '') {
+    		echo "<script language='javascript'>window.location.href='".$url."'</script>";
+    		exit();
+    	}
+    }
 }
 
 ?>
