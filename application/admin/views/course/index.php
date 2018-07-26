@@ -28,6 +28,22 @@
 						<div class="canvas-wrapper">
 								<!--Lấy các bản ghi từ CSDL-->
 								<?php
+								function subtext($text,$num=50) {
+							        if (strlen($text) <= $num) {
+							            return $text;
+							        }
+							        $text= substr($text, 0, $num);
+							        if ($text[$num-1] == ' ') {
+							            return trim($text)."...";
+							        }
+							        $x  = explode(" ", $text);
+							        $sz = sizeof($x);
+							        if ($sz <= 1)   {
+							            return $text."...";}
+							        $x[$sz-1] = '';
+							        return trim(implode(" ", $x))."...";
+								}
+
 								if($this->numCourse>0){
 								 	$course = $this->course;
 								    echo "<table class='table table-hover table-responsive table-bordered'>";
@@ -48,7 +64,7 @@
 								            	echo "<td><input type='checkbox' name='chkall'/></td>";
 								                echo "<td><a href='#'>{$name}</a></td>";
 								                echo "<td>{$price}</td>";
-								                echo "<td>{$description}</td>";
+								                echo "<td>".subtext($row['description'])."</td>";
 								                echo "<td>";
 								                    $this->category->id = $category_id;
 								                    $this->category->getCategoryNameById();
