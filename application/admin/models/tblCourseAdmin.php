@@ -8,6 +8,7 @@ class Admin_Models_tblCourseAdmin extends Libs_Model{
     public $timestamp;
     public $price;
     public $category_id;
+    public $image;
 
     public function __construct(){
         parent::__construct();
@@ -36,7 +37,7 @@ class Admin_Models_tblCourseAdmin extends Libs_Model{
     }
 
     public function createCourse(){
-        $query = "INSERT INTO courses SET name=:name, price=:price, description=:description, created=:created, category_id=:category_id";
+        $query = "INSERT INTO courses SET name=:name, price=:price, description=:description, created=:created, category_id=:category_id, image=:image";
         //$query = "INSERT INTO courses SET price=:price, created=:created, category_id=:category_id";
 
         $stmt = $this->model->conn->prepare($query);
@@ -47,6 +48,7 @@ class Admin_Models_tblCourseAdmin extends Libs_Model{
         $this->description = $this->description;
         $this->category_id = htmlspecialchars(strip_tags($this->category_id));
         $this->timestamp = date('Y-m-d H:i:s');
+        $this->image = htmlspecialchars(strip_tags($this->image));
 
         //bind values
         $stmt->bindParam(":name",$this->name);
@@ -54,6 +56,7 @@ class Admin_Models_tblCourseAdmin extends Libs_Model{
         $stmt->bindParam(":description",$this->description);
         $stmt->bindParam(":created",$this->timestamp);
         $stmt->bindParam(":category_id",$this->category_id);
+        $stmt->bindParam(":image",$this->image);
 
         if ($stmt->execute()) {
             return true;

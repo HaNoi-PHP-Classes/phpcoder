@@ -108,7 +108,7 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="<?php echo URL_BASE;?>admin"><em class="fa fa-dashboard">&nbsp;</em> Bảng điều khiển</a></li>
+			<li><a href="<?php echo URL_BASE;?>admin"><em class="fa fa-dashboard">&nbsp;</em> Bảng điều khiển</a></li>
 			<li><a href="<?php echo URL_BASE;?>admin/course"><em class="glyphicon glyphicon-th-list">&nbsp;</em> Khóa học</a></li>
 			<li><a href="#"><em class="glyphicon glyphicon-list-alt">&nbsp;</em> Danh mục khóa học</a></li>
 			<li><a href="#"><em class="glyphicon glyphicon-user">&nbsp;</em> Quản lý user</a></li>

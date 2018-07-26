@@ -51,7 +51,7 @@
 
 							        <tr>
 									    <td>Ảnh đại diện</td>
-									    <td><input type="file" name="image" /></td>
+									    <td><input type="file" name="image"/></td>
 									</tr>
 
 							        <tr>
