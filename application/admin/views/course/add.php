@@ -24,6 +24,11 @@
 							            <td>Tên khóa học</td>
 							            <td><input type='text' name='name' class='form-control' /></td>
 							        </tr>
+
+							        <tr>
+							            <td>Mô tả tóm tắt</td>
+							            <td><input type='text' name='description' class='form-control' /></td>
+							        </tr>
 							 
 							        <tr>
 							            <td>Kinh phí</td>
@@ -55,10 +60,10 @@
 									</tr>
 
 							        <tr>
-							            <td colspan="2">Nội dung khóa học<textarea id="description" name='description' class='form-control'></textarea></td>
+							            <td colspan="2">Nội dung khóa học<textarea id="content" name='content' class='form-control'></textarea></td>
 							        </tr>
 							 		<script type="text/javascript">
-							 			CKEDITOR.replace('description');
+							 			CKEDITOR.replace('content');
 							 		</script>
 							        <tr>
 							            <td></td>

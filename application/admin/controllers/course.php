@@ -108,6 +108,7 @@ class Admin_Controllers_Course extends Libs_Controller{
             $course->name = $_POST['name'];
             $course->price = $_POST['price'];
             $course->description = $_POST['description'];
+            $course->content = $_POST['content'];
             $course->category_id = $_POST['category_id'];
 
             $image = !empty($_FILES['image']['name']) ? sha1_file($_FILES['image']['tmp_name'])."-".basename($_FILES['image']['name']) : "";

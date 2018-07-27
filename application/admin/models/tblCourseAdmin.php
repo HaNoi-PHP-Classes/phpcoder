@@ -5,6 +5,7 @@ class Admin_Models_tblCourseAdmin extends Libs_Model{
     public $id;
     public $name;
     public $description;
+    public $content;
     public $timestamp;
     public $price;
     public $category_id;
@@ -37,7 +38,7 @@ class Admin_Models_tblCourseAdmin extends Libs_Model{
     }
 
     public function createCourse(){
-        $query = "INSERT INTO courses SET name=:name, price=:price, description=:description, created=:created, category_id=:category_id, image=:image";
+        $query = "INSERT INTO courses SET name=:name, price=:price, description=:description, content=:content, created=:created, category_id=:category_id, image=:image";
         //$query = "INSERT INTO courses SET price=:price, created=:created, category_id=:category_id";
 
         $stmt = $this->model->conn->prepare($query);
@@ -45,7 +46,8 @@ class Admin_Models_tblCourseAdmin extends Libs_Model{
         //Làm sạch dữ liệu của người dùng trước khi tiến hành xử lý
         $this->name = htmlspecialchars(strip_tags($this->name));
         $this->price = htmlspecialchars(strip_tags($this->price));
-        $this->description = $this->description;
+        $this->description = htmlspecialchars(strip_tags($this->description));
+        $this->content = $this->content;
         $this->category_id = htmlspecialchars(strip_tags($this->category_id));
         $this->timestamp = date('Y-m-d H:i:s');
         $this->image = htmlspecialchars(strip_tags($this->image));
@@ -54,6 +56,7 @@ class Admin_Models_tblCourseAdmin extends Libs_Model{
         $stmt->bindParam(":name",$this->name);
         $stmt->bindParam(":price",$this->price);
         $stmt->bindParam(":description",$this->description);
+        $stmt->bindParam(":content",$this->content);
         $stmt->bindParam(":created",$this->timestamp);
         $stmt->bindParam(":category_id",$this->category_id);
         $stmt->bindParam(":image",$this->image);
