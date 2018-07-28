@@ -11,7 +11,7 @@ class Libs_Bootstrap
             $listRequest = explode(DS, strtolower(rtrim($_GET["url"], DS)));
             //print_r($listRequest);exit;
             //Kiểm tra đang truy cập vào module nào: admin, manager, default
-            if(is_dir('..'.DS.'application' . DS . str_replace('-', '', $listRequest[0]))) {
+            if(is_dir('application' . DS . str_replace('-', '', $listRequest[0]))) {
                 $module = $listRequest[0];//$module = admin 
                 array_shift($listRequest);
             }else{
@@ -22,7 +22,7 @@ class Libs_Bootstrap
             }
             //Kiểm tra controller nào được gọi
             if (isset($listRequest[0])) {
-                $filePath = '..'.DS.'application' . DS . strtolower($module) . DS . 'controllers' . DS . str_replace('-', '', $listRequest[0]) . EXT;
+                $filePath = 'application' . DS . strtolower($module) . DS . 'controllers' . DS . str_replace('-', '', $listRequest[0]) . EXT;
                 if (file_exists($filePath)) {
                     $controller = $listRequest[0];
                     array_shift($listRequest);
