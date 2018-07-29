@@ -27,8 +27,15 @@ class Default_Controllers_Index extends Libs_Controller{
     
     public function listcourse(){
         if ($_REQUEST['id'] != "") {
-            $this->view-> id = $id;
-            $this->view->render("index/list");
+            $category_id = $_REQUEST['id'];
+            $courseObj = new Default_Models_tblCourse();
+            $courseObj->category_id = $category_id;
+            $course = $courseObj->getCourseByCategoryId();
+            $numCourse = $course->rowCount();
+
+            $this->view->numCourse = $numCourse;
+            $this->view->course = $course;
+            $this->view->render('index/list');
         }
     }
 

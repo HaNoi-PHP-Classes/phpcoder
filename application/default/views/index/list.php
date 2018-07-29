@@ -73,106 +73,59 @@
                             <div class="main-content-course-header">
                                 <span><a href="#">Bắt đầu với lập trình web</a></span>
                             </div>
+                            
+                            <?php
+                            function subtext($text, $num = 50)
+                            {
+                                if (strlen($text) <= $num) {
+                                    return $text;
+                                }
+                                $text = substr($text, 0, $num);
+                                if ($text[$num - 1] == ' ') {
+                                    return trim($text) . "...";
+                                }
+                                $x = explode(" ", $text);
+                                $sz = sizeof($x);
+                                if ($sz <= 1) {
+                                    return $text . "...";}
+                                $x[$sz - 1] = '';
+                                return trim(implode(" ", $x)) . "...";
+                            }
+
+                            if($this->numCourse>0){
+                                while ($row = $this->course->fetch(PDO::FETCH_ASSOC)){
+                                    extract($row);
+                            ?>
+
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <a href="<?php echo URL_BASE.'default/course/?id=1';?>">
-                                            <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
-                                        </a>
+                                        <a href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>"><img src="<?php echo URL_BASE . 'templates/admin/image/thumbnail/'.$image; ?>" alt="Khoa hoc 1" width="100%" height="inherit"></a>
                                     </div>
                                     <div class="course-social">
-                                        Like:
-                                        <span class="glyphicon glyphicon-heart-empty"></span>
-                                        Share:
-                                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                        <!--Like: <span class="glyphicon glyphicon-heart-empty"></span>
+                                        Share: <i class="fa fa-share-alt" aria-hidden="true"></i>-->
+                                        <div class="fb-like" data-href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                                     </div>
-                                    <div class="course-name">
-                                        <a href="<?php echo URL_BASE.'default/course/?id=1';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
-                                    </div>
-                                    <div class="course-description">Mô tả tóm tắt bài học ...</div>
+                                    <div class="course-name"><a href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>"><?php echo $name;?></a></div>
+                                    <!--<div class="course-description"><?php //echo subtext($description);?></div>-->
                                     <div class="course-profile">
                                         <table>
                                             <tr>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-list"></span>
-                                                    <br>PHP</td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-comment"></span>
-                                                    <br>300 comments</td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-eye-open"></span>
-                                                    <br>200 views</td>
+                                                <td><span class="glyphicon glyphicon-list"></span><br>PHP</td>
+                                                <td><span class="glyphicon glyphicon-comment"></span><br>300 comments</td>
+                                                <td><span class="glyphicon glyphicon-eye-open"></span><br>200 views</td>
                                             </tr>
                                         </table>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                <div class="course">
-                                    <div class="course-img">
-                                        <a href="<?php echo URL_BASE.'default/course/?id=2';?>">
-                                            <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
-                                        </a>
-                                    </div>
-                                    <div class="course-social">
-                                        Like:
-                                        <span class="glyphicon glyphicon-heart-empty"></span>
-                                        Share:
-                                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="course-name">
-                                        <a href="<?php echo URL_BASE.'default/course/?id=2';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
-                                    </div>
-                                    <div class="course-description">Mô tả tóm tắt bài học ...</div>
-                                    <div class="course-profile">
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-list"></span>
-                                                    <br>PHP</td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-comment"></span>
-                                                    <br>300 comments</td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-eye-open"></span>
-                                                    <br>200 views</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="course">
-                                    <div class="course-img">
-                                        <a href="<?php echo URL_BASE.'default/course/?id=3';?>">
-                                            <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
-                                        </a>
-                                    </div>
-                                    <div class="course-social">
-                                        Like:
-                                        <span class="glyphicon glyphicon-heart-empty"></span>
-                                        Share:
-                                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="course-name">
-                                        <a href="<?php echo URL_BASE.'default/course/?id=3';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
-                                    </div>
-                                    <div class="course-description">Mô tả tóm tắt bài học ...</div>
-                                    <div class="course-profile">
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-list"></span>
-                                                    <br>PHP</td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-comment"></span>
-                                                    <br>300 comments</td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-eye-open"></span>
-                                                    <br>200 views</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <?php 
+                                }
+                            }else{
+                                    echo "<div class='alert alert-info'>Không tìm thấy khóa học nào.</div>";
+                                }
+                            ?>
+                            
                         </div>

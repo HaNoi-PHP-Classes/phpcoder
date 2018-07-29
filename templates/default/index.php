@@ -21,6 +21,8 @@
    <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/shBrushJScript.js"></script>
    <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/shBrushPhp.js"></script>
    <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/shBrushSql.js"></script>
+   <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/shBrushCss.js"></script>
+   <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/shBrushPlain.js"></script>
    
    <link type="text/css" rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/styles-syntax/shCore.css"/>
    <!-- Sử dụng Style mặc định -->
@@ -204,10 +206,10 @@
                                         <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=1'?>">Bắt đầu với lập trình web</a>
                                     </div>
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=1'?>">Lập trình web với PHP</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=2'?>">Lập trình web với PHP</a>
                                     </div>
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=1'?>">Lập trình web với Javascript</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=3'?>">Lập trình web với Javascript</a>
                                     </div>
                                 </div>
                             </div>

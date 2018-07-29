@@ -30,4 +30,14 @@ class Default_Models_tblCourse extends Libs_Model{
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		return $row;
 	}
+
+	public function getCourseByCategoryId(){
+		$query = "SELECT * FROM courses WHERE category_id = ? LIMIT 0,1";
+		$stmt = $this->model->conn->prepare($query);
+		$stmt->bindParam(1, $this->category_id);
+
+		$stmt->execute();
+		return $stmt;
+	}
+
 }

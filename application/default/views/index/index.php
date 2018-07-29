@@ -24,7 +24,7 @@
 
                         <div class="row" id="main-content-new">
                             <div class="main-content-course-header">
-                                <span><a href="#">Chủ đề xem nhiều</a></span>
+                                <span><a href="#">Chủ đề mới nhất</a></span>
                             </div>
                             <?php
                             function subtext($text, $num = 50)
