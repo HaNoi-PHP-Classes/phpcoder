@@ -111,7 +111,7 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="#">Trang chủ</a>
+                            <a href="<?php echo URL_BASE;?>">Trang chủ</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Khoá học
@@ -119,15 +119,15 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="<?php echo URL_BASE.'listcourse/?id=1';?>">Bắt đầu với lập trình web</a>
+                                    <a href="<?php echo URL_BASE.'default/listcourse/?id=1';?>">Bắt đầu với lập trình web</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="<?php echo URL_BASE.'listcourse/?id=2';?>">Lập trình với PHP</a>
+                                    <a href="<?php echo URL_BASE.'default/listcourse/?id=2';?>">Lập trình với PHP</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="<?php echo URL_BASE.'listcourse/?id=3';?>">Lập trình với Javascript</a>
+                                    <a href="<?php echo URL_BASE.'default/listcourse/?id=3';?>">Lập trình với Javascript</a>
                                 </li>
                             </ul>
                         </li>
@@ -182,13 +182,13 @@
                                 <div class="main-right-content-header">Các chủ đề có tại php coder</div>
                                 <div class="col-sm-12 main-right-content-category">
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'listcourse/?id=1'?>">Bắt đầu với lập trình web</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=1'?>">Bắt đầu với lập trình web</a>
                                     </div>
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'listcourse/?id=1'?>">Lập trình web với PHP</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=1'?>">Lập trình web với PHP</a>
                                     </div>
                                     <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'listcourse/?id=1'?>">Lập trình web với Javascript</a>
+                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=1'?>">Lập trình web với Javascript</a>
                                     </div>
                                 </div>
                             </div>
