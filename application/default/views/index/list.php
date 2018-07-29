@@ -76,7 +76,7 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <a href="<?php echo URL_BASE.'course/?id=1';?>">
+                                        <a href="<?php echo URL_BASE.'default/course/?id=1';?>">
                                             <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
                                         </a>
                                     </div>
@@ -87,7 +87,7 @@
                                         <i class="fa fa-share-alt" aria-hidden="true"></i>
                                     </div>
                                     <div class="course-name">
-                                        <a href="<?php echo URL_BASE.'course/?id=1';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
+                                        <a href="<?php echo URL_BASE.'default/course/?id=1';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
                                     </div>
                                     <div class="course-description">Mô tả tóm tắt bài học ...</div>
                                     <div class="course-profile">
@@ -110,7 +110,7 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <a href="<?php echo URL_BASE.'course/?id=2';?>">
+                                        <a href="<?php echo URL_BASE.'default/course/?id=2';?>">
                                             <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
                                         </a>
                                     </div>
@@ -121,7 +121,7 @@
                                         <i class="fa fa-share-alt" aria-hidden="true"></i>
                                     </div>
                                     <div class="course-name">
-                                        <a href="<?php echo URL_BASE.'course/?id=2';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
+                                        <a href="<?php echo URL_BASE.'default/course/?id=2';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
                                     </div>
                                     <div class="course-description">Mô tả tóm tắt bài học ...</div>
                                     <div class="course-profile">
@@ -144,7 +144,7 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <a href="<?php echo URL_BASE.'course/?id=3';?>">
+                                        <a href="<?php echo URL_BASE.'default/course/?id=3';?>">
                                             <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
                                         </a>
                                     </div>
@@ -155,7 +155,7 @@
                                         <i class="fa fa-share-alt" aria-hidden="true"></i>
                                     </div>
                                     <div class="course-name">
-                                        <a href="<?php echo URL_BASE.'course/?id=3';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
+                                        <a href="<?php echo URL_BASE.'default/course/?id=3';?>">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
                                     </div>
                                     <div class="course-description">Mô tả tóm tắt bài học ...</div>
                                     <div class="course-profile">

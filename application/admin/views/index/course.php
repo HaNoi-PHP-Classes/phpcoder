@@ -93,7 +93,7 @@
 								 
 								    // paging buttons will be here
 								    // the page where this paging is used
-									$page_url = URL_BASE. "admin/course/?";
+									$page_url = URL_BASE. "admin/index/course/?";
 									 
 									// count all courses in the database to calculate total pages
 									$total_rows = $this->total_rows;
