@@ -52,7 +52,7 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <a href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>"><img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img1.jpg" alt="Khoa hoc 1" width="100%" height="inherit"></a>
+                                        <a href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>"><img src="<?php echo URL_BASE . 'templates/admin/image/thumbnail/'.$image; ?>" alt="Khoa hoc 1" width="100%" height="inherit"></a>
                                     </div>
                                     <div class="course-social">
                                         <!--Like: <span class="glyphicon glyphicon-heart-empty"></span>
