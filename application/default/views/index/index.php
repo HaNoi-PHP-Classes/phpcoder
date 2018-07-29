@@ -52,15 +52,15 @@
                             <div class="col-sm-4">
                                 <div class="course">
                                     <div class="course-img">
-                                        <a href="<?php echo URL_BASE.'default/course/?id=1';?>"><img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img1.jpg" alt="Khoa hoc 1" width="100%" height="inherit"></a>
+                                        <a href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>"><img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img1.jpg" alt="Khoa hoc 1" width="100%" height="inherit"></a>
                                     </div>
                                     <div class="course-social">
                                         <!--Like: <span class="glyphicon glyphicon-heart-empty"></span>
                                         Share: <i class="fa fa-share-alt" aria-hidden="true"></i>-->
-                                        <div class="fb-like" data-href="<?php echo URL_BASE.'default/course/?id=1';?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                                        <div class="fb-like" data-href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                                     </div>
-                                    <div class="course-name"><a href="<?php echo URL_BASE.'default/course/?id=1';?>"><?php echo $name;?></a></div>
-                                    <div class="course-description"><?php echo subtext($description);?></div>
+                                    <div class="course-name"><a href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>"><?php echo $name;?></a></div>
+                                    <!--<div class="course-description"><?php //echo subtext($description);?></div>-->
                                     <div class="course-profile">
                                         <table>
                                             <tr>

@@ -21,13 +21,13 @@ class Default_Models_tblCourse extends Libs_Model{
 		return $stmt;
 	}
 
-	public function getCategoryNameById(){
-		$query = "SELECT name FROM categories WHERE category_id = ? LIMIT 0,1";
+	public function getCourseById(){
+		$query = "SELECT * FROM courses WHERE course_id = ? LIMIT 0,1";
 		$stmt = $this->model->conn->prepare($query);
 		$stmt->bindParam(1, $this->id);
 
 		$stmt->execute();
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
-		$this->name = $row['name'];
+		return $row;
 	}
 }

@@ -18,10 +18,9 @@ class Default_Controllers_Index extends Libs_Controller{
     public function course(){
         if($_REQUEST['id'] != ""){
             $id = $_REQUEST['id'];
-            //Khởi tạo đối tượng Default_Models_tblProduct
-            //$objProduct = new Default_Models_tblProduct();
-            //$this->view->itemProduct = $objProduct->getProductById($id);
-            $this->view->id = $id;
+            $courseObj = new Default_Models_tblCourse();
+            $courseObj->id = $id;
+            $this->view->courseRow = $courseObj->getCourseById();
             $this->view->render('index/course');
         }
     }

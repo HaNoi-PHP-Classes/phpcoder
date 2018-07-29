@@ -7,7 +7,7 @@ function __autoload($class){
     }else if(file_exists($file)){
         include_once $file;    
     }else{
-        echo "File ".$file." not exists!";
+        //echo "File ".$file." not exists!";
     }
 }
 new Libs_Bootstrap(); 

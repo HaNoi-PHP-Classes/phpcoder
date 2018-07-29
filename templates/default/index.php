@@ -10,6 +10,25 @@
     <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/layout.css">
     <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/XRegExp.js"></script>
+       
+       <!-- Thư viện cơ bản của SyntaxHighlighter -->
+      
+     <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/shCore.js"></script>
+   
+   <!-- Thư viện Highlight cho Javascript -->
+   <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/shBrushJScript.js"></script>
+   <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/shBrushPhp.js"></script>
+   <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/shBrushSql.js"></script>
+   
+   <link type="text/css" rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/styles-syntax/shCore.css"/>
+   <!-- Sử dụng Style mặc định -->
+   <link type="text/css" rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/styles-syntax/shThemeDefault.css"/>
+   
+   <!-- Highlight tất cả các code -->   
+   <script type="text/javascript">SyntaxHighlighter.all();</script>    
+
     <link rel="icon" href="<?php echo URL_BASE.'templates/default';?>/favicon.png">
     <script type="text/javascript">
         $(document).ready(function(){
