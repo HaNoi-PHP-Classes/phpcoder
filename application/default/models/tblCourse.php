@@ -15,7 +15,7 @@ class Default_Models_tblCourse extends Libs_Model{
 	}
 
 	public function getAllCourse(){
-		$query = "SELECT * FROM courses ORDER BY created DESC";
+		$query = "SELECT * FROM courses ORDER BY created DESC LIMIT 6";
 		$stmt = $this->model->conn->prepare($query);
 		$stmt->execute();
 		return $stmt;

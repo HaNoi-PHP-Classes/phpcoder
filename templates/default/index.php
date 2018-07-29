@@ -200,17 +200,24 @@
                                       </form>
                                 </div>
                                 <!--end main-right-content-search-->
+                                
                                 <div class="main-right-content-header">Các chủ đề có tại php coder</div>
                                 <div class="col-sm-12 main-right-content-category">
-                                    <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=1'?>">Bắt đầu với lập trình web</a>
-                                    </div>
-                                    <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=2'?>">Lập trình web với PHP</a>
-                                    </div>
-                                    <div class="category">
-                                        <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id=3'?>">Lập trình web với Javascript</a>
-                                    </div>
+                                    <?php
+                                    $categoryObj = new Default_Models_tblCategory();
+                                    $categories = $categoryObj->getCategory();
+                                    $numCategory = $categories->rowCount();
+                                    if($numCategory>0){
+                                        while ($row = $categories->fetch(PDO::FETCH_ASSOC)){
+                                             
+                                    ?>
+                                            <div class="category">
+                                                <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id='.$row['category_id']; ?>"><?php echo $row['description'];?></a>
+                                            </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>

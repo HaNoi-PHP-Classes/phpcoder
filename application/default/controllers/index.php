@@ -10,6 +10,7 @@ class Default_Controllers_Index extends Libs_Controller{
         $courseObj = new Default_Models_tblCourse();
         $course = $courseObj->getAllCourse();
         $numCourse = $course->rowCount();
+
         $this->view->numCourse = $numCourse;
         $this->view->course = $course;
         $this->view->render('index/index');
