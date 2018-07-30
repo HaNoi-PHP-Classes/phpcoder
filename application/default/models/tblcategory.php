@@ -19,13 +19,14 @@ class Default_Models_tblCategory extends Libs_Model{
 	}
 
 	public function getCategoryNameById(){
-		$query = "SELECT name FROM categories WHERE category_id = ? LIMIT 0,1";
+		$query = "SELECT name,description FROM categories WHERE category_id = ? LIMIT 0,1";
 		$stmt = $this->model->conn->prepare($query);
 		$stmt->bindParam(1, $this->id);
 
 		$stmt->execute();
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		$this->name = $row['name'];
+		$this->description = $row['description'];
 	}
 
 

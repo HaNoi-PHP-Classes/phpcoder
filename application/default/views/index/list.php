@@ -1,3 +1,14 @@
+    <script type="text/javascript">
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); 
+          js.id = id;
+          js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
     <style type="text/css">
     .icon-bar {
     position: fixed;
@@ -70,8 +81,17 @@
                         
                         <div class="row main-content-course">
                             <!--start brecrum | path-->
+                            <?php
+                            if(isset($_REQUEST['id'])){
+                                $id = $_REQUEST['id'];
+                                $catObj = new Default_Models_tblCategory();
+                                $catObj->id = $id;
+                                $catObj->getCategoryNameById();
+                            }
+                            
+                            ?>
                             <div class="main-content-course-header">
-                                <span><a href="#">Bắt đầu với lập trình web</a></span>
+                                <span><?php echo $catObj->description; ?></span>
                             </div>
                             
                             <?php
@@ -95,6 +115,8 @@
                             if($this->numCourse>0){
                                 while ($row = $this->course->fetch(PDO::FETCH_ASSOC)){
                                     extract($row);
+                                    $catObj->id = $category_id;
+                                    $catObj->getCategoryNameById();
                             ?>
 
                             <div class="col-sm-4">
@@ -112,7 +134,7 @@
                                     <div class="course-profile">
                                         <table>
                                             <tr>
-                                                <td><span class="glyphicon glyphicon-list"></span><br>PHP</td>
+                                                <td><span class="glyphicon glyphicon-list"></span><br><?php echo $catObj->name;?></td>
                                                 <td><span class="glyphicon glyphicon-comment"></span><br>300 comments</td>
                                                 <td><span class="glyphicon glyphicon-eye-open"></span><br>200 views</td>
                                             </tr>

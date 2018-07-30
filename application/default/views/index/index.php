@@ -99,6 +99,11 @@
                                 $course = $courseObj->getCourseByCategoryId();
                                 if($course->rowCount()>0)
                                 {
+
+                                    $categoryObj->id = $category_id;
+                                    $categoryObj->getCategoryNameById();
+                                    while($rowCourse = $course->fetch(PDO::FETCH_ASSOC))
+                                    {   
                         ?>
                                     <div class="row main-content-course">
                                         <div class="main-content-course-header">
@@ -107,23 +112,23 @@
                                         <div class="col-sm-4">
                                             <div class="course">
                                                 <div class="course-img">
-                                                    <img src="<?php echo URL_BASE . 'templates/default'; ?>/image/img4.jpg" alt="Khoa hoc 1" width="100%" height="inherit">
+                                                    <a href="<?php echo URL_BASE.'default/course/?id='.$rowCourse['course_id'];?>"><img src="<?php echo URL_BASE . 'templates/admin/image/thumbnail/'.$rowCourse['image']; ?>" alt="<?php echo $rowCourse['name'];?>" width="100%" height="inherit"></a>
                                                 </div>
                                                 <div class="course-social">
                                                     <!--Like: <span class="glyphicon glyphicon-heart-empty"></span>
                                                     Share: <i class="fa fa-share-alt" aria-hidden="true"></i>-->
-                                                    <div class="fb-like" data-href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                                                    <div class="fb-like" data-href="<?php echo URL_BASE.'default/course/?id='.$rowCourse['course_id'];?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                                                 </div>
                                                 <div class="course-name">
-                                                    <a href="#">Làm thế nào để chạy một kịch bản PHP? Hướng dẫn từng bước</a>
+                                                    <div class="course-name"><a href="<?php echo URL_BASE.'default/course/?id='.$rowCourse['course_id'];?>"><?php echo $rowCourse['name'];?></a></div>
                                                 </div>
-                                                <div class="course-description">Mô tả tóm tắt bài học ...</div>
+                                                <!--<div class="course-description">Mô tả tóm tắt bài học ...</div>-->
                                                 <div class="course-profile">
                                                     <table>
                                                         <tr>
                                                             <td>
                                                                 <span class="glyphicon glyphicon-list"></span>
-                                                                <br>PHP</td>
+                                                                <br><?php echo $categoryObj->name;?></td>
                                                             <td>
                                                                 <span class="glyphicon glyphicon-comment"></span>
                                                                 <br>300 comments</td>
@@ -138,6 +143,7 @@
                                         
                                     </div>
                         <?php
+                                    }
                                 }
                             }
                         }
