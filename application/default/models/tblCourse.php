@@ -31,8 +31,15 @@ class Default_Models_tblCourse extends Libs_Model{
 		return $row;
 	}
 
+	public function getCourseByName($name){
+		$query = "SELECT * FROM courses WHERE name LIKE '%".$name."%'";
+		$stmt = $this->model->conn->prepare($query);
+		$stmt->execute();
+		return $stmt;
+	}
+
 	public function getCourseByCategoryId(){
-		$query = "SELECT * FROM courses WHERE category_id = ? LIMIT 0,1";
+		$query = "SELECT * FROM courses WHERE category_id = ? ORDER BY created DESC LIMIT 6";
 		$stmt = $this->model->conn->prepare($query);
 		$stmt->bindParam(1, $this->category_id);
 

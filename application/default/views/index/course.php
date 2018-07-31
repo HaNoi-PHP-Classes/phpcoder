@@ -89,17 +89,27 @@
                 <div class="col-sm-9" id="main-content">
                     <div class="container-fluid">
 
+                        <?php
+                            extract($this->course);
+
+                            //Get category name and all category by category_id
+                            $categoryObj = new Default_Models_tblCategory();
+                            $categories = $categoryObj->getCategory();
+                            $numCategory = $categories->rowCount();
+
+                            $categoryObj->id = $category_id;
+                            $categoryObj->getCategoryNameById();
+                        ?>
                     	<div class="main-content-path">
                                 <a href="<?php echo URL_BASE;?>">Trang chủ</span></a> > 
-                                <a href="<?php echo URL_BASE;?>">PHP</span></a>
+                                <a href="<?php echo URL_BASE.'default/listcourse/?id='.$category_id;?>"><?php echo $categoryObj->name; ?></span></a>
                         </div>
 
-                        <?php
-                            extract($this->courseRow);
-                        ?>
 						<div class="row main-content-course">
                             <div class="main-content-course-header" style="border-bottom:1px solid #fff;">
-                                <span style="background-color:#fff;padding-left:0px;"><a href="#" style="color:#000;">CURD - Tạo, Đọc, Cập nhật, Xóa dữ liệu các bản ghi trong cơ sở dữ liệu</a></span>
+                                <span style="background-color:#fff;padding-left:0px;color:#000;">
+                                    <?php echo $name;?>
+                                </span>
                             </div>
                             <div class="main-content-course-profile">
                                 <div>Ngày cập nhật: 17/7/2018 | Ngày viết: 10/7/2018 | Tác giả: ThoPN</div>
@@ -115,3 +125,71 @@
                             </div>
                         </div>
                         
+                         </div>
+                </div>
+                <!--end .main-content-->
+            
+                <div class="col-sm-3" id="main-right">
+                    <div class="course" style="box-shadow:none;">
+                        <div class="container-fluid">
+                            <div class="row" id="main-right-content">
+                                <div class="main-right-content-header">TÌM KIẾM THEO CHỦ ĐỀ</div>
+                                <div class="col-sm-12 main-right-content-search">
+                                    <form action="<?php echo URL_BASE.'default/search/'?>" method="GET">
+                                            <div class="input-group">
+                                              <input type="text" class="form-control" placeholder="Nhap tu khoa tim kiem" id="name" name="name" />
+                                              <div class="input-group-btn">
+                                                <button class="btn btn-primary" style="background-color:#000;" type="submit">
+                                                  <span class="glyphicon glyphicon-search"></span>
+                                                </button>
+                                              </div>
+                                            </div>
+                                      </form>
+                                </div>
+                                <!--end main-right-content-search-->
+                                
+                                <div class="main-right-content-header">Các chủ đề có tại php coder</div>
+                                <div class="col-sm-12 main-right-content-category">
+                                    <?php
+                                   
+                                    if($numCategory>0){
+                                        while ($row = $categories->fetch(PDO::FETCH_ASSOC)){
+                                             
+                                    ?>
+                                            <div class="category">
+                                                <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id='.$row['category_id']; ?>"><?php echo $row['description'];?></a>
+                                            </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </div>
+
+                                <div class="main-right-content-header">Chủ đề liên quan</div>
+                                <div class="col-sm-12 main-right-content-category">
+                                    <?php
+                                    $courseObj = new Default_Models_tblCourse();
+                                    $courseObj->category_id = $category_id;
+                                    $courseRows = $courseObj->getCourseByCategoryId();
+                                    $numCourse = $courseRows->rowCount();
+                                    if($numCourse>0){
+                                        while ($row = $courseRows->fetch(PDO::FETCH_ASSOC)){
+                                             
+                                    ?>
+                                            <div class="category">
+                                                <a href="<?php echo URL_BASE.'default/course/?id='.$row['course_id']; ?>"><?php echo $row['name'];?></a>
+                                            </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end #main-right-->
+            </div>
+        </div>
+    </div>
+    <!--end #main-->

@@ -74,22 +74,23 @@
                 <div class="col-sm-9" id="main-content">
                     <div class="container-fluid">
 
-                        <div class="main-content-path">
-                                <a href="<?php echo URL_BASE;?>">Trang chủ</span></a> > 
-                                <a href="<?php echo URL_BASE;?>">PHP</span></a>
-                        </div>
-                        
-                        <div class="row main-content-course">
-                            <!--start brecrum | path-->
-                            <?php
+                        <?php
                             if(isset($_REQUEST['id'])){
                                 $id = $_REQUEST['id'];
                                 $catObj = new Default_Models_tblCategory();
                                 $catObj->id = $id;
                                 $catObj->getCategoryNameById();
-                            }
+                        }
                             
-                            ?>
+                        ?>
+                        <div class="main-content-path">
+                                <a href="<?php echo URL_BASE;?>">Trang chủ</span></a> > 
+                                <a href="<?php echo URL_BASE.'default/listcourse/?id='.$_REQUEST['id'];?>"><?php echo $catObj->name;?></span></a>
+                        </div>
+                        
+                        <div class="row main-content-course">
+                            <!--start brecrum | path-->
+                            
                             <div class="main-content-course-header">
                                 <span><?php echo $catObj->description; ?></span>
                             </div>
@@ -151,3 +152,54 @@
                             ?>
                             
                         </div>
+
+                         </div>
+                </div>
+                <!--end .main-content-->
+            
+                <div class="col-sm-3" id="main-right">
+                    <div class="course" style="box-shadow:none;">
+                        <div class="container-fluid">
+                            <div class="row" id="main-right-content">
+                                <div class="main-right-content-header">TÌM KIẾM THEO CHỦ ĐỀ</div>
+                                <div class="col-sm-12 main-right-content-search">
+                                    <form action="<?php echo URL_BASE.'default/search/'?>" method="GET">
+                                            <div class="input-group">
+                                              <input type="text" class="form-control" placeholder="Nhap tu khoa tim kiem" id="name" name="name" />
+                                              <div class="input-group-btn">
+                                                <button class="btn btn-primary" style="background-color:#000;" type="submit">
+                                                  <span class="glyphicon glyphicon-search"></span>
+                                                </button>
+                                              </div>
+                                            </div>
+                                      </form>
+                                </div>
+                                <!--end main-right-content-search-->
+                                
+                                <div class="main-right-content-header">Các chủ đề có tại php coder</div>
+                                <div class="col-sm-12 main-right-content-category">
+                                    <?php
+                                    $categoryObj = new Default_Models_tblCategory();
+                                    $categories = $categoryObj->getCategory();
+                                    $numCategory = $categories->rowCount();
+                                    if($numCategory>0){
+                                        while ($row = $categories->fetch(PDO::FETCH_ASSOC)){
+                                             
+                                    ?>
+                                            <div class="category">
+                                                <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id='.$row['category_id']; ?>"><?php echo $row['description'];?></a>
+                                            </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end #main-right-->
+            </div>
+        </div>
+    </div>
+    <!--end #main-->

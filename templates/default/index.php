@@ -101,11 +101,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6" id="top-left">
-                    <span class="glyphicon glyphicon-earphone" style="margin-right: 5px;"></span>Hotline: 0989.910.898
+                    <span class="glyphicon glyphicon-earphone" style="margin-right: 5px;"></span>0989.910.898
                 </div>
                 <div class="col-sm-6" id="top-right">
-                    <span class="glyphicon glyphicon-user" style="margin-right: 5px;"></span><a href="#" onclick="document.getElementById('id02').style.display='block'"> Đăng ký </a>
-                    <span><i class="fa fa-sign-in" style="font-size:18px;margin-right: 5px;margin-left: 10px;"></i><a href="#" onclick="document.getElementById('id01').style.display='block'">Đăng nhập</a></span>
+                    <span class="glyphicon glyphicon-user" style="margin-right: 0px;"></span><a href="#" onclick="document.getElementById('id02').style.display='block'"> Đăng ký </a>
+                    <span><i class="fa fa-sign-in" style="font-size:18px;margin-right: 2px;margin-left: 10px;"></i><a href="#" onclick="document.getElementById('id01').style.display='block'">Đăng nhập</a></span>
                 </div>
             </div>
         </div>
@@ -135,7 +135,7 @@
                             <a href="<?php echo URL_BASE;?>">Trang chủ</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Khoá học
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Các chủ đề
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
@@ -178,56 +178,7 @@
                         <?php
                         require TEMPLATE;
                         ?>
-                    </div>
-                </div>
-                <!--end .main-content-->
-            
-                <div class="col-sm-3" id="main-right">
-                    <div class="course" style="box-shadow:none;">
-                        <div class="container-fluid">
-                            <div class="row" id="main-right-content">
-                                <div class="main-right-content-header">TÌM KIẾM THEO CHỦ ĐỀ</div>
-                                <div class="col-sm-12 main-right-content-search">
-                                    <form action="#" method="GET">
-                                            <div class="input-group">
-                                              <input type="text" class="form-control" placeholder="Nhap tu khoa tim kiem" id="txtSearch"/>
-                                              <div class="input-group-btn">
-                                                <button class="btn btn-primary" style="background-color:#000;" type="submit">
-                                                  <span class="glyphicon glyphicon-search"></span>
-                                                </button>
-                                              </div>
-                                            </div>
-                                      </form>
-                                </div>
-                                <!--end main-right-content-search-->
-                                
-                                <div class="main-right-content-header">Các chủ đề có tại php coder</div>
-                                <div class="col-sm-12 main-right-content-category">
-                                    <?php
-                                    $categoryObj = new Default_Models_tblCategory();
-                                    $categories = $categoryObj->getCategory();
-                                    $numCategory = $categories->rowCount();
-                                    if($numCategory>0){
-                                        while ($row = $categories->fetch(PDO::FETCH_ASSOC)){
-                                             
-                                    ?>
-                                            <div class="category">
-                                                <span class="glyphicon glyphicon-ok"></span><a href="<?php echo URL_BASE.'default/listcourse/?id='.$row['category_id']; ?>"><?php echo $row['description'];?></a>
-                                            </div>
-                                    <?php
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end #main-right-->
-            </div>
-        </div>
-    </div>
-    <!--end #main-->
+                    
 
     <div class="container-fluid footer">
         <div class="container">

@@ -21,7 +21,7 @@ class Default_Controllers_Index extends Libs_Controller{
             $id = $_REQUEST['id'];
             $courseObj = new Default_Models_tblCourse();
             $courseObj->id = $id;
-            $this->view->courseRow = $courseObj->getCourseById();
+            $this->view->course = $courseObj->getCourseById();
             $this->view->render('index/course');
         }
     }
@@ -41,6 +41,17 @@ class Default_Controllers_Index extends Libs_Controller{
         }
     }
 
+    public function search(){
+            $name = $_REQUEST['name'];
+            $courseObj = new Default_Models_tblCourse();
+            //$courseObj->name = $_REQUEST['name'];
+            $course = $courseObj->getCourseByName($name);
+            $numCourse = $course->rowCount();
+
+            $this->view->numCourse = $numCourse;
+            $this->view->course = $course;
+            $this->view->render("index/search");
+    }
 
 }
 
