@@ -104,8 +104,22 @@
                     <span class="glyphicon glyphicon-earphone" style="margin-right: 5px;"></span>0989.910.898
                 </div>
                 <div class="col-sm-6" id="top-right">
-                    <span class="glyphicon glyphicon-user" style="margin-right: 0px;"></span><a href="#" onclick="document.getElementById('id02').style.display='block'"> Đăng ký </a>
-                    <span><i class="fa fa-sign-in" style="font-size:18px;margin-right: 2px;margin-left: 10px;"></i><a href="#" onclick="document.getElementById('id01').style.display='block'">Đăng nhập</a></span>
+                    <?php
+                    if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['access_level']=='Customer'){
+                    ?>
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        &nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>
+                        &nbsp;&nbsp;<span class="caret"></span>
+                        <a href="<?php echo URL_BASE.'default/user/logout';?>">Đăng xuất</a>
+                    <?php
+                    }else
+                    {
+                    ?>
+                        <span class="glyphicon glyphicon-user" style="margin-right: 0px;"></span><a href="#" onclick="document.getElementById('id02').style.display='block'"> Đăng ký </a>
+                        <span><i class="fa fa-sign-in" style="font-size:18px;margin-right: 2px;margin-left: 10px;"></i><a href="#" onclick="document.getElementById('id01').style.display='block'">Đăng nhập</a></span>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>

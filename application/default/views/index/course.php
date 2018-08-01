@@ -112,7 +112,7 @@
                                 </span>
                             </div>
                             <div class="main-content-course-profile">
-                                <div>Ngày cập nhật: 17/7/2018 | Ngày viết: 10/7/2018 | Tác giả: ThoPN</div>
+                                <div>Ngày cập nhật: <?php echo date_format($modified,'d/m/Y');?> | Ngày viết: 10/7/2018 | Tác giả: ThoPN</div>
                                 
                                 <div class="fb-like" data-href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 
