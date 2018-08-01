@@ -105,6 +105,8 @@
                 </div>
                 <div class="col-sm-6" id="top-right">
                     <?php
+                    $_SESSION['logged_in'] = true;
+                    $_SESSION['access_level']=='Customer';
                     if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['access_level']=='Customer'){
                     ?>
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -243,7 +245,7 @@
     <!--end #footer-->
 
     <div id="id01" class="modal">
-        <form class="modal-content animate" action="/action_page.php" method="post">
+        <form class="modal-content animate" action="<?php echo URL_BASE.'default/login'?>" method="post">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <img src="<?php echo URL_BASE.'templates/default'.'/image/img_avatar2.png';?>" alt="Avatar" class="avatar">
@@ -254,7 +256,7 @@
                 <input type="text" placeholder="Nhập địa chỉ email" name="email" required>
 
                 <label for="psw"><b>Mật khẩu</b></label>
-                <input type="password" placeholder="Nhập mật khẩu" name="psw" required>
+                <input type="password" placeholder="Nhập mật khẩu" name="password" required>
             
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Ghi nhớ tài khoản

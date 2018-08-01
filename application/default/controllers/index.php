@@ -53,6 +53,35 @@ class Default_Controllers_Index extends Libs_Controller{
             $this->view->render("index/search");
     }
 
+    public function login(){
+        $userObj = new Default_Models_tblUser();
+        if($_POST){
+            $userObj->email = $_POST['email'];
+            $email_exists = $userObj->emailExists();
+
+            if($email_exists && password_verify($_POST['password'], $userObj->password) && $userObj->status ==1){
+                $_SESSION['logged_in'] = true;
+                $_SESSION['user_id'] = $userObj->id;
+                $_SESSION['access_level'] = $userObj->access_level;
+                $_SESSION['firstname'] = htmlspecialchars($userObj->firstname, ENT_QUOTES, 'UTF-8');
+                $_SESSION['lastname'] = htmlspecialchars($userObj->lastname, ENT_QUOTES, 'UTF-8');
+
+                if($userObj->access_level == 'Customer'){
+                    $this->redir(URL_BASE."default/action=login_success");
+                    //header("Location: {URL_BASE}default?action=login_success");
+                }
+                else{
+                    $this->redir(URL_BASE."admin/action=login_success");
+                    //header("Location: {URL_BASE}admin/?action=login_success");
+                }
+            }
+            else
+            {
+                $access_denied = true; 
+            }
+        }
+    }
+
 }
 
 ?>
