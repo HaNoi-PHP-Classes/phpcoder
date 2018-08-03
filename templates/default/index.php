@@ -111,7 +111,7 @@
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                         &nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>
                         &nbsp;&nbsp;<span class="caret"></span>
-                        <a href="<?php echo URL_BASE.'default/user/logout';?>">Đăng xuất</a>
+                        <a href="<?php echo URL_BASE.'default/customer/logout';?>">Đăng xuất</a>
                     <?php
                     }else
                     {

@@ -7,6 +7,10 @@ class Default_Controllers_Customer extends Libs_Controller{
         //Đã có thuộc tính view của cha
     }
 
+    public function index(){
+    	$this->redir(URL_BASE . "default/index");
+    }
+
     public function login(){
     	if($_POST){
     		$customer = new Default_Models_tblCustomer();
@@ -23,8 +27,20 @@ class Default_Controllers_Customer extends Libs_Controller{
 			}else{
 				$access_denied = true;
 			}
+    	}else{
+    		$this->redir(URL_BASE . "default/index");
     	}
+
     }
+
+    public function logout(){
+    	if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
+    		session_destroy();
+    		$this->redir(URL_BASE . "default/index");	
+    	}else{
+    		$this->redir(URL_BASE . "default/index");
+    	}
+   	}
 
 }
 
