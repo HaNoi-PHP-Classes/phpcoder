@@ -9,15 +9,20 @@ class Default_Controllers_Customer extends Libs_Controller{
 
     public function login(){
     	if($_POST){
-    		$customerObj = new Default_Models_tblCustomer();
-			//$customer->email = $_POST['email'];
-			//if($customer->emailExists()){
+    		$customer = new Default_Models_tblCustomer();
+			$customer->email = $_POST['email'];
+			if($customer->checkEmail()==true && password_verify($_POST['password'],$customer->password) && $customer->status=1){
 				$_SESSION['logged_in']=true;
-    			$_SESSION['firstname'] = htmlspecialchars(strip_tags($_POST['email']));
-    			$this->redir(URL_BASE."default/index");
-    			//$this->view->render('customer/index');
-			//}
-    		
+				$_SESSION['user_id'] = $customer->id;
+				$_SESSION['access_level'] = $customer->access_level;
+				$_SESSION['firstname'] = $customer->firstname;
+				$_SESSION['lastname'] = $customer->lastname;
+				if($customer->access_level == "Customer"){
+					$this->redir(URL_BASE . "default/index");
+				}
+			}else{
+				$access_denied = true;
+			}
     	}
     }
 
