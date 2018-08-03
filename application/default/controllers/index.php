@@ -54,12 +54,12 @@ class Default_Controllers_Index extends Libs_Controller{
     }
 
     public function login(){
-        $userObj = new Default_Models_tblUser();
         if($_POST){
+            $userObj = new Default_Models_tblUser();
             $userObj->email = $_POST['email'];
             $email_exists = $userObj->emailExists();
-
-            if($email_exists && password_verify($_POST['password'], $userObj->password) && $userObj->status ==1){
+            $this->render('index/index');
+            /*if($email_exists){
                 $_SESSION['logged_in'] = true;
                 $_SESSION['user_id'] = $userObj->id;
                 $_SESSION['access_level'] = $userObj->access_level;
@@ -67,18 +67,20 @@ class Default_Controllers_Index extends Libs_Controller{
                 $_SESSION['lastname'] = htmlspecialchars($userObj->lastname, ENT_QUOTES, 'UTF-8');
 
                 if($userObj->access_level == 'Customer'){
-                    $this->redir(URL_BASE."default/action=login_success");
+                    //$this->redir(URL_BASE."default/action=login_success");
                     //header("Location: {URL_BASE}default?action=login_success");
+                    $this->render('index/index');
                 }
                 else{
                     $this->redir(URL_BASE."admin/action=login_success");
                     //header("Location: {URL_BASE}admin/?action=login_success");
+                    $this->render('index/index');
                 }
             }
             else
             {
                 $access_denied = true; 
-            }
+            }*/
         }
     }
 
