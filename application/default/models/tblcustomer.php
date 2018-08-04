@@ -40,4 +40,29 @@ class Default_Models_tblCustomer extends Libs_Model{
         return false;
     }
 
+    public function createCustomer(){
+        $this->created = date('Y-m-d H:i:s');
+        $query = "INSERT INTO customers SET email=:email, password=:password, status=:status, access_level=:access_level, created=:created";
+        $stmt = $this->model->conn->prepare($query);
+
+        //Lam sach du lieu
+        $this->email = htmlspecialchars(strip_tags($this->email));
+        $this->password = htmlspecialchars(strip_tags($this->password));
+        $this->access_level = htmlspecialchars(strip_tags($this->access_level));
+
+        //bind value
+        $stmt->bindParam(":email",$this->email);
+        $password_hash = password_hash($this->password, PASSWORD_BCRYPT);
+        $stmt->bindParam(":password",$password_hash);
+        $stmt->bindParam(":access_level", $this->access_level);
+        $stmt->bindParam(":created",$this->created);
+        $stmt->bindParam(":status",$this->status);
+
+        //Execute
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

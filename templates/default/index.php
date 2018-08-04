@@ -108,10 +108,18 @@
                     
                     if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
                     ?>
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        &nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>
-                        &nbsp;&nbsp;<span class="caret"></span>
-                        <a href="<?php echo URL_BASE.'default/customer/logout';?>">Đăng xuất</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="botton" aria-expanded="false">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                &nbsp;&nbsp;<?php echo $_SESSION['email']; ?>
+                                &nbsp;&nbsp;<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?php echo URL_BASE.'default/customer/logout';?>">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                     <?php
                     }else
                     {
@@ -260,7 +268,7 @@
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Ghi nhớ tài khoản
                 </label>
-                <input type="submit" class="btn btn-primary" value="Đăng nhập">
+                <button type="submit" class="signinbtn">Đăng nhập</button>
             </div>
 
             <div class="container-form" style="background-color:#f1f1f1">
@@ -271,7 +279,7 @@
     </div>
 
     <div id="id02" class="modal">
-      <form class="modal-content" action="/action_page.php" method="post">
+      <form class="modal-content" action="<?php echo htmlspecialchars(strip_tags(URL_BASE.'default/customer/register'));?>" method="post">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
         </div>
@@ -283,10 +291,10 @@
           <input type="text" placeholder="Nhập địa chỉ email" name="email" required>
 
           <label for="psw"><b>Mật khẩu</b></label>
-          <input type="password" placeholder="Nhập mật khẩu" name="psw" required>
+          <input type="password" placeholder="Nhập mật khẩu" name="password" required>
 
           <label for="psw-repeat"><b>Nhập lại mật khẩu</b></label>
-          <input type="password" placeholder="Nhập mật khẩu" name="psw-repeat" required>
+          <input type="password" placeholder="Nhập mật khẩu" name="repassword" required>
           
           <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Ghi nhớ tài khoản
