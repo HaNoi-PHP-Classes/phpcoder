@@ -113,10 +113,7 @@
     <div class="container-fluid" id="top">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6" id="top-left">
-                    <span class="glyphicon glyphicon-earphone" style="margin-right: 5px;"></span>0989.910.898
-                </div>
-                <div class="col-sm-6" id="top-right">
+                <div class="col-sm-12" id="top-right">
                     <?php
                     
                     if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
@@ -148,16 +145,13 @@
     </div>
     <!--end #top-->
 
-    <nav class="navbar navbar-inverse" id="menu" role="navigation">
+    <nav class="navbar navbar-inverse" id="menu">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="glyphicon glyphicon-align-justify"></span>
                     </button>
                     <a class="navbar-brand" style="padding-top:4px;" href="<?php echo URL_BASE;?>">
                         <img src="<?php echo URL_BASE.'templates/default';?>/image/logo.png" alt="logo" width="110px" height="40px">
@@ -196,6 +190,7 @@
             </div>
         </div>
     </nav>
+
     <!--end nav-->
     
     <!--<div class="container-fluid bg" style="background-image: url('<?php //echo URL_BASE.'templates/default';?>/image/photo.jpg')">
@@ -217,60 +212,70 @@
                     
 
     <div class="container-fluid footer">
-        <div class="container">
+        <div class="container" style="padding-left: 0px;">
             <div class="row footer-main">
-                <div class="col-sm-9 columns">
+                <div class="col-sm-9">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-12 footer-item-header header">
                                 <h3>Các chủ đề có tại Phpcoder.vn</h3>
                             </div>
     
-
-                            <div id="owl-demo" class="col-sm-12 owl-carousel owl-theme" style="opacity: 1; display: block; text-align:center;">
+                            <div id="owl-demo" class="col-sm-12 owl-carousel owl-theme" style="opacity: 1; display: block; text-align:center; padding-left: 0px;">
                                 <div class="owl-wrapper-outer">
-                                    <div class="owl-wrapper" style="left: 0px; display: block;">
-                                        <div class="owl-item" style="width: 182px; margin-right: 20px;">
+                                    <div class="owl-wrapper" style="display: block;">
+                                        <div class="owl-item" style="width: 20%; padding-right: 2%">
                                             <div class="item">
-                                                <a target="_blank" title="PHP" href="http://khoapham.vn/lap-trinh-php.html">
-                                                    <img alt="PHP" title="PHP" src="http://khoapham.vn/public/images/logo/php.png">
-                                                    <h4 style="background-color:#fff; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                <a target="_blank" title="PHP" href="#">
+                                                    <img alt="PHP" title="PHP" src="<?php echo URL_BASE.'templates/default';?>/image/php.png">
+                                                    <h4 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
                                                         PHP
                                                     </h4>
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="owl-item" style="width: 182px;margin-right: 20px;">
+                                        <div class="owl-item" style="width: 20%; padding-right: 2%">
                                             <div class="item">
-                                                <a target="_blank" title="IOS" href="http://khoapham.vn/lap-trinh-ios-nang-cao.html">
-                                                    <img alt="IOS" title="IOS" src="http://khoapham.vn/public/images/logo/ioscoban.png">
-                                                    <h4 style="background-color:#fff; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
-                                                        PHP
+                                                <a target="_blank" title="Front-End" href="#">
+                                                    <img alt="Front-End" title="Front-End" src="<?php echo URL_BASE.'templates/default';?>/image/front-end.jpg">
+                                                    <h4 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                        Font-End
                                                     </h4>
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="owl-item" style="width: 182px; margin-right: 20px;">
+                                        <div class="owl-item" style="width: 20%; padding-right: 2%">
                                             <div class="item">
-                                                <a target="_blank" title="PHP" href="http://khoapham.vn/lap-trinh-php.html">
-                                                    <img alt="PHP" title="PHP" src="http://khoapham.vn/public/images/logo/php.png">
-                                                    <h4 style="background-color:#fff; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
-                                                        PHP
+                                                <a target="_blank" title="NodeJS" href="#">
+                                                    <img alt="nodejs" title="nodejs" src="<?php echo URL_BASE.'templates/default';?>/image/nodejs.png">
+                                                    <h4 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                        NodeJS
                                                     </h4>
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="owl-item" style="width: 182px;margin-right: 20px;">
+                                        <div class="owl-item" style="width: 20%; padding-right: 2%">
                                             <div class="item">
-                                                <a target="_blank" title="IOS" href="http://khoapham.vn/lap-trinh-ios-nang-cao.html">
-                                                    <img alt="IOS" title="IOS" src="http://khoapham.vn/public/images/logo/ioscoban.png">
-                                                    <h4 style="background-color:#fff; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
-                                                        PHP
+                                                <a target="_blank" title="react-native" href="#">
+                                                    <img alt="react-native" title="react-native" src="<?php echo URL_BASE.'templates/default';?>/image/react-native.png">
+                                                    <h4 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                        React-Native
                                                     </h4>
                                                 </a>
                                             </div>
                                         </div>
-                                       
+                                        
+                                        <div class="owl-item" style="width: 20%; padding-right: 2%">
+                                            <div class="item">
+                                                <a target="_blank" title="IOS" href="#">
+                                                    <img alt="IOS" title="IOS" src="<?php echo URL_BASE.'templates/default';?>/image/ioscoban.png">
+                                                    <h4 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                        IOS cơ bản
+                                                    </h4>
+                                                </a>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -281,9 +286,9 @@
                 <div class="col-sm-3 info">
                     <div class="logo"><img src="<?php echo URL_BASE.'templates/default';?>/image/logo.png" width="50%"></div>
                     <div class="footer-info">
-                        <span class="glyphicon glyphicon-user"></span> Tư vấn chuyên đề: 0989.910898 <br>
-                        <span class="glyphicon glyphicon-phone-alt"></span> Hỗ trợ kỹ thuật: 0978.837.896 <br>
-                        <span class="glyphicon glyphicon-envelope"></span> Email: thopn.hvcsnd@gmail.com <br>
+                        <span class="glyphicon glyphicon-user"></span> Tư vấn chuyên đề: 0989.910.898 <br>
+                        <span class="glyphicon glyphicon-phone-alt"></span> Hỗ trợ kỹ thuật: 0929.708.998 <br>
+                        <span class="glyphicon glyphicon-envelope"></span> Email: phpcodding@gmail.com <br>
                     </div>
                 </div>
             </div>
@@ -355,6 +360,5 @@
         </div>
       </form>
     </div>
-
 </body>
 </html>

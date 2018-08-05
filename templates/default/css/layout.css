@@ -63,6 +63,12 @@ nav {
     color: #fff;
 }
 
+.navbar-inverse .navbar-toggle {
+    border-color: #fff;
+    color: #000;
+    background-color: #fff;
+}
+
 .navbar-inverse .navbar-brand {
     color: #fff;
 }
@@ -242,10 +248,13 @@ nav {
     padding-left: 0px;
     padding-right: 0px;
 }
+.footer-main a{
+    color:#fff;
+}
 
 .info {
     background-color: #fff;
-    margin-top: 36px;
+    margin-top: 38px;
     border-radius: 5px;
     color: #000;
 }
