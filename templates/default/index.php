@@ -6,9 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="<?php echo URL_BASE.'templates/default';?>/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo URL_BASE.'templates/default';?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo URL_BASE.'templates/default';?>/js/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/layout.css">
     <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/modal.css">
+    <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/owl.carousel.css">
+    <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo URL_BASE.'templates/default';?>/css/owl.theme.default.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script type="text/javascript" src="<?php echo URL_BASE.'templates/default';?>/scripts-syntax/XRegExp.js"></script>
@@ -91,6 +95,15 @@
                 modal1.style.display = "none";
             }
         }
+        
+        $("#owl-demo").owlCarousel({
+			items : 4, //10 items above 1000px browser width
+			itemsDesktop : [1000,4], //5 items between 1000px and 901px
+			itemsDesktopSmall : [900,3], // betweem 900px and 601px
+			itemsTablet: [600,2], //2 items between 600 and 0;
+			itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+			autoPlay : true
+		});
 
     </script>
     <title>PHP Coder</title>
@@ -206,28 +219,62 @@
     <div class="container-fluid footer">
         <div class="container">
             <div class="row footer-main">
-                <div class="col-sm-9">
+                <div class="col-sm-9 columns">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-4 footer-item">
-                                <h3>Danh muc giam gia</h3>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, repudiandae corrupti molestias dolorum
-                                    sunt adipisci obcaecati, alias delectus ipsa illo doloremque eum quam iusto atque debitis distinctio,
-                                    natus qui! Cupiditate!</p>
+                            <div class="col-sm-12 footer-item-header header">
+                                <h3>Các chủ đề có tại Phpcoder.vn</h3>
                             </div>
-                            <div class="col-sm-4 footer-item">
-                                <h3>Danh muc giam gia</h3>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, repudiandae corrupti molestias dolorum
-                                    sunt adipisci obcaecati, alias delectus ipsa illo doloremque eum quam iusto atque debitis distinctio,
-                                    natus qui! Cupiditate!</p>
+    
+
+                            <div id="owl-demo" class="col-sm-12 owl-carousel owl-theme" style="opacity: 1; display: block; text-align:center;">
+                                <div class="owl-wrapper-outer">
+                                    <div class="owl-wrapper" style="left: 0px; display: block;">
+                                        <div class="owl-item" style="width: 182px; margin-right: 20px;">
+                                            <div class="item">
+                                                <a target="_blank" title="PHP" href="http://khoapham.vn/lap-trinh-php.html">
+                                                    <img alt="PHP" title="PHP" src="http://khoapham.vn/public/images/logo/php.png">
+                                                    <h4 style="background-color:#fff; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                        PHP
+                                                    </h4>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="owl-item" style="width: 182px;margin-right: 20px;">
+                                            <div class="item">
+                                                <a target="_blank" title="IOS" href="http://khoapham.vn/lap-trinh-ios-nang-cao.html">
+                                                    <img alt="IOS" title="IOS" src="http://khoapham.vn/public/images/logo/ioscoban.png">
+                                                    <h4 style="background-color:#fff; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                        PHP
+                                                    </h4>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="owl-item" style="width: 182px; margin-right: 20px;">
+                                            <div class="item">
+                                                <a target="_blank" title="PHP" href="http://khoapham.vn/lap-trinh-php.html">
+                                                    <img alt="PHP" title="PHP" src="http://khoapham.vn/public/images/logo/php.png">
+                                                    <h4 style="background-color:#fff; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                        PHP
+                                                    </h4>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="owl-item" style="width: 182px;margin-right: 20px;">
+                                            <div class="item">
+                                                <a target="_blank" title="IOS" href="http://khoapham.vn/lap-trinh-ios-nang-cao.html">
+                                                    <img alt="IOS" title="IOS" src="http://khoapham.vn/public/images/logo/ioscoban.png">
+                                                    <h4 style="background-color:#fff; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                        PHP
+                                                    </h4>
+                                                </a>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
                             </div>
-                
-                            <div class="col-sm-4 footer-item">
-                                <h3>Danh muc giam gia</h3>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, repudiandae corrupti molestias dolorum
-                                    sunt adipisci obcaecati, alias delectus ipsa illo doloremque eum quam iusto atque debitis distinctio,
-                                    natus qui! Cupiditate!</p>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -245,7 +292,7 @@
     <div class="container-fluid footer copyright">
         <div class="container">
             <div class="row footer-copyright">
-                <div class="col-sm-12">@ Copyright 2018 by ThoPN</div>
+                <div class="col-sm-12">@ Copyright 2018 by phpcoder.vn</div>
             </div>
         </div>
     </div>
