@@ -5,6 +5,10 @@ class Admin_Controllers_Course extends Libs_Controller{
         parent::__construct();
     }
     
+    public function index(){
+        $this->view->render("index/course");
+    }
+
     public function add(){
         $categoryObj = new Admin_Models_tblCategory();
         $category = $categoryObj->getCategory();

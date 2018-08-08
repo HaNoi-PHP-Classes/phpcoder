@@ -195,6 +195,27 @@
                                     }
                                     ?>
                                 </div>
+
+                                <!--Subscribe-->
+                                <div class="col-sm-12 subscribe">
+                                    <div id="subscribe-intro">
+                                    Bạn muốn nhận được email về chủ đề mới sau mỗi tuần. Vui lòng đăng ký
+                                    </div>
+                                    <div id="subscribe-form">
+                                        <form action="#" method="post">
+                                        <div class="form-group">
+                                            <label for="email">Họ và tên:</label>
+                                            <input type="text" class="form-control" id="fullname" name="fullname">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pwd">Địa chỉ email:</label>
+                                            <input type="email" class="form-control" id="email" name="email">
+                                        </div>
+                                        <button type="submit" class="btn btn-danger">Click để Subscribe</button>
+                                        </form>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
