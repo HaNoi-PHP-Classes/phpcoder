@@ -332,3 +332,5 @@ nav {
     background: #bb0000;
     color: white;
 }
+
+#success_message{ display: none;}

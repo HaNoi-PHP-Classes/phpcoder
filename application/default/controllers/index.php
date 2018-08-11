@@ -84,6 +84,13 @@ class Default_Controllers_Index extends Libs_Controller{
         }
     }
 
+    public function addSubcribe(){
+        if($_POST){
+        
+        }
+            
+    }
+
 }
 
 ?>

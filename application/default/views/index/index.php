@@ -202,20 +202,20 @@
                                     Bạn muốn nhận được email về chủ đề mới sau mỗi tuần. Vui lòng đăng ký
                                     </div>
                                     <div id="subscribe-form">
-                                        <form action="#" method="post">
-                                        <div class="form-group">
-                                            <label for="email">Họ và tên:</label>
-                                            <input type="text" class="form-control" id="fullname" name="fullname">
+                                        <form action="<?php echo URL_BASE.'default/index/addSubcribe'?>" method="post" class="form-group" id="subscribe_form">
+                                        <div class="input-group"  style="margin-bottom:10px;">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                            <input  name="fullname" placeholder="Nhập họ và tên" class="form-control"  type="text" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="pwd">Địa chỉ email:</label>
-                                            <input type="email" class="form-control" id="email" name="email">
+                                        <div class="input-group" style="margin-bottom:10px;">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                            <input name="email" placeholder="Nhập địa chỉ email" class="form-control"  type="email" required>
                                         </div>
                                         <button type="submit" class="btn btn-danger">Click để Subscribe</button>
                                         </form>
                                     </div>
                                 </div>
-
+                                
                             </div>
                         </div>
                     </div>
