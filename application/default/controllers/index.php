@@ -93,8 +93,35 @@ class Default_Controllers_Index extends Libs_Controller{
             if(!$subscribe->checkEmail()){
                 $subscribe->fullname = $_POST['fullname'];
                 if($subscribe->createSubscribe()){
-                    //Chuyen huong sang thong bao ket qua
-                    $this->view->render("index/subscribe");
+                    require 'application/default/models/phpmailer.php';
+                    $mail = new PHPMailer();
+                    $mail->IsSMTP();
+                    $mail->SMTPAuth = true;
+                    $mail->SMTPSecure = "ssl";
+                    $mail->Host = "smtp.gmail.com";
+                    $mail->Port = 465;
+                    $mail->Username = "thopn.hvcsnd@gmail.com";
+                    $mail->Password = "Ngoctho1277601352011";
+
+                    $mail->SetFrom("thopn.hvcsnd@gmail.com", "phpcoder.vn");
+                    $mail->AddAddress($subscribe->email, "Thành viên phpcoder.vn");
+                    //$mail->AddReplyTo("thopn.hvcsnd@gmail.com", "phpcoder.vn");
+
+                    $mail->Subject = "Xác nhận thông tin để nhận được những chủ đề mới có từ phpcoder.vn";
+                    $mail->CharSet = "utf-8";
+                    //$body = "<h3>Chào mừng bạn đến với PHPMailer</h3>";
+
+                    //$mail->Body = $body;
+                    $mail->msgHTML("<h3>Chào các bạn đến với PHPMailer</h3>");
+                    if($mail->Send())
+                    {
+                        //Chuyen huong sang thong bao ket qua
+                        $this->view->render("index/subscribe");
+                    }else{
+                        $this->redir(URL_BASE."default/index");
+                    }
+                    
+
                 }else{
                     //Chuyen huong ve trang chu
                     $this->redir(URL_BASE."default/index");
