@@ -86,7 +86,23 @@ class Default_Controllers_Index extends Libs_Controller{
 
     public function addSubcribe(){
         if($_POST){
-        
+            $subscribe = new Default_Models_tblSubscribe();
+            $subscribe->email = $_POST['email'];
+
+            //Kiem tra ton tai email trong bang 'subscribe'
+            if(!$subscribe->checkEmail()){
+                $subscribe->fullname = $_POST['fullname'];
+                if($subscribe->createSubscribe()){
+                    //Chuyen huong sang thong bao ket qua
+                    $this->view->render("index/subscribe");
+                }else{
+                    //Chuyen huong ve trang chu
+                    $this->redir(URL_BASE."default/index");
+                }
+            }else{
+                //Chuyen huong ve trang chu
+                $this->redir(URL_BASE."default/index");
+            }
         }
             
     }
