@@ -121,7 +121,7 @@ class Default_Controllers_Index extends Libs_Controller{
                                 <div style='padding:5px 0px;'><a href='http://www.phpcoder.vn/default/listcourse/?id=3'>Lập trình với Javascript</div>
 
                                 <h3 style='padding:5px 0px;'>III. LIÊN HỆ VỚI CHÚNG TÔI</h3>
-                                <div>Facebook: </div>
+                                <div>Facebook: <a href='https://www.facebook.com/tutwebdevelopment'>@phpcoder</a></div>
                                 <div>Google: </div>
                                 <div>LinkedIn: </div>
                                 <div>Instagram: </div>
@@ -154,6 +154,24 @@ class Default_Controllers_Index extends Libs_Controller{
         }
             
     }
+
+    public function verify(){
+        if(isset($_GET['access_code']) && $_GET['access_code'] != ""){
+            $subscribe = new Default_Models_tblSubscribe();
+            $subscribe->access_code = $_GET['access_code'];
+            if($subscribe->checkAccessCode()){
+                $subscribe->status = 1;
+                $subscribe->activeSubscribe();
+                $this->view->render("index/thank");
+            }else {
+                $this->redir(URL_BASE . "default/index");
+            }
+        }else {
+            $this->redir(URL_BASE . "default/index");
+        }
+    }
+
+
 
 }
 

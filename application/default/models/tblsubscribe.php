@@ -77,6 +77,37 @@ class Default_Models_tblSubscribe extends Libs_Model{
         return $min + $rnd;
     }
 
+    public function checkAccessCode(){
+        $query = "SELECT id FROM subscribe WHERE access_code = ? LIMIT 0,1";
+        $stmt = $this->model->conn->prepare($query);
+
+        $this->access_code = htmlspecialchars(strip_tags($this->access_code)); 
+        $stmt->bindParam(1, $this->access_code);
+        $stmt->execute();
+        $num = $stmt->rowCount();
+
+        if($num>0){
+            return true;
+        }
+        return false;
+    }
+
+    public function activeSubscribe(){
+        $query = "UPDATE subscribe SET status=:status WHERE access_code=:access_code";
+        $stmt = $this->model->conn->prepare($query);
+
+        $this->status = htmlspecialchars(strip_tags($this->status));
+        $this->access_code = htmlspecialchars(strip_tags($this->access_code));
+
+        $stmt->bindParam(":status",$this->status);
+        $stmt->bindParam(":access_code",$this->access_code);
+
+        if($stmt->execute()){
+            return true;
+        }
+        return false;
+    }
+
 }
 
 ?>
