@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.6
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: localhost
--- Thời gian đã tạo: Th8 11, 2018 lúc 06:55 PM
--- Phiên bản máy phục vụ: 10.1.29-MariaDB
--- Phiên bản PHP: 7.2.0
+-- Host: 127.0.0.1
+-- Generation Time: Aug 13, 2018 at 11:37 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,41 +19,50 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `phpcoderdb`
+-- Database: `phpcoderdb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `subscribe`
+-- Table structure for table `subscribe`
 --
 
 CREATE TABLE `subscribe` (
   `id` int(11) NOT NULL,
   `fullname` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `access_code` text NOT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Dumping data for table `subscribe`
+--
+
+INSERT INTO `subscribe` (`id`, `fullname`, `email`, `access_code`, `status`) VALUES
+(20, 'Phạm Ngọc Minh Châu', 'thopn.hvcsnd@gmail.com', 'O0TbSFHG30W4R5eaIFUEu7AI3q3Borp4', 0);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `subscribe`
+-- Indexes for table `subscribe`
 --
 ALTER TABLE `subscribe`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `subscribe`
+-- AUTO_INCREMENT for table `subscribe`
 --
 ALTER TABLE `subscribe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

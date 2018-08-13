@@ -110,9 +110,30 @@ class Default_Controllers_Index extends Libs_Controller{
                     $mail->Subject = "Xác nhận thông tin để nhận được những chủ đề mới có từ phpcoder.vn";
                     $mail->CharSet = "utf-8";
                     //$body = "<h3>Chào mừng bạn đến với PHPMailer</h3>";
+                    $content = "<div style='padding:5px 0px;'>Xin chào Coder!</div>
+                                <h3 style='padding:5px 0px;'>I. XÁC NHẬN EMAIL CỦA BẠN</h3>
+                                <div style='padding:5px 0px;'>Để xác nhận email subcribe, vui lòng kích liên kết dưới đây:</div>
+                                <div style='padding:5px 0px;'><a href='".URL_BASE."default/index/verify/?access_code=".$subscribe->access_code."'>".URL_BASE."default/index/verify/?access_code=".$subscribe->access_code."</a></div>
 
-                    //$mail->Body = $body;
-                    $mail->msgHTML("<h3>Chào các bạn đến với PHPMailer</h3>");
+                                <h3 style='padding:5px 0px;'>II. CÁC CHỦ ĐỂ HAY TẠI phpcoder</h3>
+                                <div style='padding:5px 0px;'><a href='http://www.phpcoder.vn/default/listcourse/?id=1'>Bắt đầu với lập trình web</div>
+                                <div style='padding:5px 0px;'><a href='http://www.phpcoder.vn/default/listcourse/?id=2'>Lập trình PHP</div>
+                                <div style='padding:5px 0px;'><a href='http://www.phpcoder.vn/default/listcourse/?id=3'>Lập trình với Javascript</div>
+
+                                <h3 style='padding:5px 0px;'>III. LIÊN HỆ VỚI CHÚNG TÔI</h3>
+                                <div>Facebook: </div>
+                                <div>Google: </div>
+                                <div>LinkedIn: </div>
+                                <div>Instagram: </div>
+
+                                <h3 style='padding:5px 0px;'>IV. CẢM ƠN CÁC BẠN!</h3>
+                                <div style='padding:5px 0px;'>Chúc các bạn những điều tốt đẹp trong sự nghiệp và cuộc sống!</div>
+                                <div>Trân trọng,</div>
+                                <div>Phạm Ngọc Thọ - Người sáng lập và là tác giả phpcoder.vn</div>";
+
+                    $mail->msgHTML($content);
+                    //$mail->Body = $content;
+
                     if($mail->Send())
                     {
                         //Chuyen huong sang thong bao ket qua

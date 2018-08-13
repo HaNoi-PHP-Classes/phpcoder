@@ -4,6 +4,8 @@ class Default_Models_tblSubscribe extends Libs_Model{
     public $id;
     public $fullname;
     public $email;
+    public $status;
+    public $access_code;
 
 	public function __construct(){
 		parent::__construct();
@@ -27,16 +29,20 @@ class Default_Models_tblSubscribe extends Libs_Model{
     }
 
     public function createSubscribe(){
-        $query = "INSERT INTO subscribe SET fullname=:fullname, email=:email";
+        $query = "INSERT INTO subscribe SET fullname=:fullname, email=:email, status=:status, access_code=:access_code";
         $stmt = $this->model->conn->prepare($query);
 
         //Lam sach du lieu
         $this->fullname = htmlspecialchars(strip_tags($this->fullname));
         $this->email = htmlspecialchars(strip_tags($this->email));
+        $this->status = 0;
+        $this->access_code = htmlspecialchars(strip_tags($this->getToken()));
 
         //bind value
         $stmt->bindParam(":fullname",$this->fullname);
         $stmt->bindParam(":email",$this->email);
+        $stmt->bindParam(":status",$this->status);
+        $stmt->bindParam(":access_code",$this->access_code);
         
         //Execute
         if($stmt->execute()){
@@ -45,6 +51,32 @@ class Default_Models_tblSubscribe extends Libs_Model{
             return false;
         }
     }
+
+    public function getToken($length=32){
+        $token = "";
+        $codeAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $codeAlphabet.= "abcdefghijklmnopqrstuvwxyz";
+        $codeAlphabet.= "0123456789";
+        for($i=0;$i<$length;$i++){
+            $token .= $codeAlphabet[$this->crypto_rand_secure(0,strlen($codeAlphabet))];
+        }
+        return $token;
+    }
+     
+    public function crypto_rand_secure($min, $max) {
+        $range = $max - $min;
+        if ($range < 0) return $min; // not so random...
+        $log = log($range, 2);
+        $bytes = (int) ($log / 8) + 1; // length in bytes
+        $bits = (int) $log + 1; // length in bits
+        $filter = (int) (1 << $bits) - 1; // set all lower bits to 1
+        do {
+            $rnd = hexdec(bin2hex(openssl_random_pseudo_bytes($bytes)));
+            $rnd = $rnd & $filter; // discard irrelevant bits
+        } while ($rnd >= $range);
+        return $min + $rnd;
+    }
+
 }
 
 ?>
