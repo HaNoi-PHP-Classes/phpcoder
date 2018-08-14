@@ -1,6 +1,11 @@
     <div class="container-fluid bg" style="background-image: url('<?php echo URL_BASE.'templates/default';?>/image/photo.jpg')">
-        <div id="banner">
-            Content
+        <div class="container banner" style="color: #fff;">
+
+            <p class="item-1">Bạn đã sẵn sàng để trở thành lập trình viên phát triển ứng dụng web chưa?</p>
+
+            <p class="item-2">Hãy bắt đầu ngay với ngôn ngữ lập trình PHP</p>
+
+            <p class="item-3">Bạn sẽ thành công!</p>
         </div>
     </div>
     <!--end #banner-->

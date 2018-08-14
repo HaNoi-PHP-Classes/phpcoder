@@ -94,16 +94,40 @@ class Default_Controllers_Index extends Libs_Controller{
                 $subscribe->fullname = $_POST['fullname'];
                 if($subscribe->createSubscribe()){
                     require 'application/default/models/phpmailer.php';
+                    
+                        /*require_once "application/default/models/mail.php";
+                        $from = "admin@phpcoder.vn";
+                        $to = "thopn.hvcsnd@gmail.com";
+                        $subject = "Hi!";
+                        $body = "Hi,\n\nHow are you?";
+                        $host = "mail.phpcoder.vn";
+                        $username = "admin@phpcoder.vn";
+                        $password = "RvX#zx+5wM5l";
+                        $headers = array ('From' => $from,
+                        'To' => $to,
+                        'Subject' => $subject);
+                        $smtp = Mail::factory('smtp',
+                        array ('host' => $host,
+                        'auth' => true,
+                        'username' => $username,
+                        'password' => $password));
+                        $mail = $smtp->send($to, $headers, $body);
+                        if (PEAR::isError($mail)) {
+                            $this->view->render("index/subscribe");
+                        } else {
+                            $this->redir(URL_BASE."default/index");
+                        }*/
+
                     $mail = new PHPMailer();
                     $mail->IsSMTP();
                     $mail->SMTPAuth = true;
                     $mail->SMTPSecure = "ssl";
-                    $mail->Host = "smtp.gmail.com";
+                    $mail->Host = "mail.phpcoder.vn";
                     $mail->Port = 465;
-                    $mail->Username = "thopn.hvcsnd@gmail.com";
-                    $mail->Password = "Ngoctho1277601352011";
+                    $mail->Username = "admin@phpcoder.vn";
+                    $mail->Password = "RvX#zx+5wM5l";
 
-                    $mail->SetFrom("thopn.hvcsnd@gmail.com", "phpcoder.vn");
+                    $mail->SetFrom("admin@phpcoder.vn", "phpcoder.vn");
                     $mail->AddAddress($subscribe->email, "Thành viên phpcoder.vn");
                     //$mail->AddReplyTo("thopn.hvcsnd@gmail.com", "phpcoder.vn");
 
@@ -142,7 +166,6 @@ class Default_Controllers_Index extends Libs_Controller{
                         $this->redir(URL_BASE."default/index");
                     }
                     
-
                 }else{
                     //Chuyen huong ve trang chu
                     $this->redir(URL_BASE."default/index");

@@ -220,7 +220,7 @@
                     <div class="footer-info">
                         <span class="glyphicon glyphicon-user"></span> Tư vấn chuyên đề: 0989.910.898 <br>
                         <span class="glyphicon glyphicon-phone-alt"></span> Hỗ trợ kỹ thuật: 0929.708.998 <br>
-                        <span class="glyphicon glyphicon-envelope"></span> Email: phpcodding@gmail.com <br>
+                        <span class="glyphicon glyphicon-envelope"></span> Email: admin@phpcoder.vn <br>
                     </div>
                 </div>
             </div>
