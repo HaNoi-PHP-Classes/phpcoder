@@ -5,8 +5,9 @@
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
+        z-index:9999;
         }
-
+        
         .icon-bar a {
             display: block;
             text-align: center;

@@ -1,11 +1,11 @@
     <div class="container-fluid bg" style="background-image: url('<?php echo URL_BASE.'templates/default';?>/image/photo.jpg')">
-        <div class="container banner" style="color: #fff;">
+        <div class="container banner" style="color: #fff;font-weight:bold;">
 
             <p class="item-1">Bạn đã sẵn sàng để trở thành lập trình viên phát triển ứng dụng web chưa?</p>
 
-            <p class="item-2">Hãy bắt đầu ngay với ngôn ngữ lập trình PHP</p>
+            <p class="item-2">Hãy bắt đầu với ngôn ngữ lập trình PHP ngay hôm nay</p>
 
-            <p class="item-3">Bạn sẽ thành công!</p>
+            <p class="item-3">Tôi tin, Bạn sẽ thành công!</p>
         </div>
     </div>
     <!--end #banner-->
@@ -32,21 +32,21 @@
                                 <span><a href="#">Chủ đề mới nhất</a></span>
                             </div>
                             <?php
-                            function subtext($text, $num = 50)
+                            function subtext($text, $num = 68)
                             {
                                 if (strlen($text) <= $num) {
                                     return $text;
                                 }
                                 $text = substr($text, 0, $num);
                                 if ($text[$num - 1] == ' ') {
-                                    return trim($text) . "...";
+                                    return trim($text) . " ...";
                                 }
                                 $x = explode(" ", $text);
                                 $sz = sizeof($x);
                                 if ($sz <= 1) {
-                                    return $text . "...";}
+                                    return $text . " ...";}
                                 $x[$sz - 1] = '';
-                                return trim(implode(" ", $x)) . "...";
+                                return trim(implode(" ", $x)) . " ...";
                             }
 
                             if($this->numCourse>0){
@@ -64,7 +64,7 @@
                                         Share: <i class="fa fa-share-alt" aria-hidden="true"></i>-->
                                         <div class="fb-like" data-href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                                     </div>
-                                    <div class="course-name"><a href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>"><?php echo $name;?></a></div>
+                                    <div class="course-name"><a href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>"><?php echo subtext($name);?></a></div>
                                     <!--<div class="course-description"><?php //echo subtext($description);?></div>-->
                                     <div class="course-profile">
                                         <table>

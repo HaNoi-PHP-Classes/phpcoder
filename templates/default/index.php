@@ -45,12 +45,14 @@
                     $("#main-right").hide();
                     $("div#main-content").removeClass("col-sm-9");
                     $("div#main-content").addClass("col-sm-12");
+                    $(".icon-bar").hide();
                 }
                 else
                 {
                     $("#main-right").show();
                     $("div#main-content").removeClass("col-sm-12");
                     $("div#main-content").addClass("col-sm-9");
+                    $(".icon-bar").show();
                 }
             });
 
@@ -150,9 +152,9 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-12 footer-item-header header">
-                                <h3>Các chủ đề có tại Phpcoder.vn</h3>
+                                <h3>Các chủ đề có trong tương lai</h3>
                             </div>
-    
+                            <center>
                             <div id="owl-demo" class="col-sm-12 owl-carousel owl-theme" style="opacity: 1; display: block; text-align:center; padding-left: 0px;">
                                 <div class="owl-wrapper-outer">
                                     <div class="owl-wrapper" style="display: block;">
@@ -160,9 +162,9 @@
                                             <div class="item">
                                                 <a target="_blank" title="PHP" href="#">
                                                     <img alt="PHP" title="PHP" src="<?php echo URL_BASE.'templates/default';?>/image/php.png">
-                                                    <h5 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
-                                                        PHP
-                                                    </h5>
+                                                    <h6 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                        PHP Framework
+                                                    </h6>
                                                 </a>
                                             </div>
                                         </div>
@@ -170,9 +172,9 @@
                                             <div class="item">
                                                 <a target="_blank" title="Front-End" href="#">
                                                     <img alt="Front-End" title="Front-End" src="<?php echo URL_BASE.'templates/default';?>/image/front-end.jpg">
-                                                    <h5 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                    <h6 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
                                                         Font-End
-                                                    </h5>
+                                                    </h6>
                                                 </a>
                                             </div>
                                         </div>
@@ -180,9 +182,9 @@
                                             <div class="item">
                                                 <a target="_blank" title="NodeJS" href="#">
                                                     <img alt="nodejs" title="nodejs" src="<?php echo URL_BASE.'templates/default';?>/image/nodejs.png">
-                                                    <h5 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                    <h6 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
                                                         NodeJS
-                                                    </h5>
+                                                    </h6>
                                                 </a>
                                             </div>
                                         </div>
@@ -190,9 +192,9 @@
                                             <div class="item">
                                                 <a target="_blank" title="react-native" href="#">
                                                     <img alt="react-native" title="react-native" src="<?php echo URL_BASE.'templates/default';?>/image/react-native.png">
-                                                    <h5 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                    <h6 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
                                                         React-Native
-                                                    </h5>
+                                                    </h6>
                                                 </a>
                                             </div>
                                         </div>
@@ -201,9 +203,9 @@
                                             <div class="item">
                                                 <a target="_blank" title="IOS" href="#">
                                                     <img alt="IOS" title="IOS" src="<?php echo URL_BASE.'templates/default';?>/image/ioscoban.png">
-                                                    <h5 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                                                    <h6 style="background-color:#3fbf79; margin-top:-2px; padding-top:10px;height:35px; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
                                                         IOS cơ bản
-                                                    </h5>
+                                                    </h6>
                                                 </a>
                                             </div>
                                         </div>
@@ -211,7 +213,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            </center>
                         </div>
                     </div>
                 </div>
