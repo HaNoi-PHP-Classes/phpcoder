@@ -63,7 +63,15 @@
 							            <td colspan="2">Nội dung khóa học<textarea id="content" name='content' class='form-control'></textarea></td>
 							        </tr>
 							 		<script type="text/javascript">
-							 			CKEDITOR.replace('content');
+							 			CKEDITOR.replace('content',
+							 				{
+												filebrowserBrowseUrl : '<?php echo URL_BASE.'templates/admin/';?>ckfinder/ckfinder.html',
+												filebrowserImageBrowseUrl : '<?php echo URL_BASE.'templates/admin/';?>ckfinder/ckfinder.html?type=Images',
+												filebrowserFlashBrowseUrl : '<?php echo URL_BASE.'templates/admin/';?>ckfinder/ckfinder.html?type=Flash',
+												filebrowserUploadUrl : '<?php echo URL_BASE.'templates/admin/';?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+												filebrowserImageUploadUrl : '<?php echo URL_BASE.'templates/admin/';?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+												filebrowserFlashUploadUrl : '<?php echo URL_BASE.'templates/admin/';?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+											});
 							 		</script>
 							        <tr>
 							            <td></td>
