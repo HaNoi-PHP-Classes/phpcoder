@@ -108,19 +108,24 @@
 
 						<div class="row main-content-course">
                             <div class="main-content-course-header" style="border-bottom:1px solid #fff;">
-                                <span style="background-color:#fff;padding-left:0px;color:#000;">
+                                <span style="background-color:#fff;padding-left:10px;color:#000;">
                                     <?php echo $name;?>
                                 </span>
                             </div>
-                            <div class="main-content-course-profile">
-                                <div>Ngày cập nhật: <?php echo date_format($modified,'d/m/Y');?> | Ngày viết: 10/7/2018 | Tác giả: ThoPN</div>
-                                
+                            <div class="main-content-course-profile" style="padding-left:16px;">
+                                <?php
+                                $dat1 = strtotime($modified);
+                                $modi = date('d/m/y', $dat1);
+                                $dat2 = strtotime($created);
+                                $crea = date('d/m/y', $dat2);
+                                ?>
+                                <div>Ngày cập nhật: <?php echo $modi; ?> | Ngày viết: <?php echo $crea; ?> | Tác giả: ThoPN</div>
                                 <div class="fb-like" data-href="<?php echo URL_BASE.'default/course/?id='.$course_id;?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 
                             </div>
                             <div class="col-sm-12">
-                                <div class="course-description"><?php echo $description;?></div>
-                                <div class="course-content">
+                                <div class="course-description" style="padding-left:1px; padding-bottom:15px; font-weight:bold;"><?php echo $description;?></div>
+                                <div class="course-content" style="padding-left:2px;">
                                     <?php echo $content;?>
                                 </div>
                                 <div id="disqus_thread"></div>

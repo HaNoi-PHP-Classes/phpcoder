@@ -75,12 +75,12 @@
 								                    // read one, edit and delete button will be here
 								                	 
 													// edit product button
-													echo "<a href='update_product.php?id={$id}'>";
+													echo "<a href='".URL_BASE."admin/course/updatecourse/?id={$course_id}'>";
 													    echo "<span class='glyphicon glyphicon-edit'></span>";
 													echo "</a>&nbsp;&nbsp;&nbsp;";
 													 
 													// delete product button
-													echo "<a href='delete-id='{$id}'>";
+													echo "<a href='deletecourse/?id='{$course_id}'>";
 													    echo "<span class='glyphicon glyphicon-remove'></span>";
 													echo "</a>";
 								                echo "</td>";

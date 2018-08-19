@@ -111,6 +111,54 @@ class Admin_Controllers_Course extends Libs_Controller{
         }
     }
 
+    public function updatecourse(){
+        $id = isset($_GET['id'])?$_GET['id']:die("Không tồn tại ID khoá học.");
+        if($id!=""){
+            $course = new Admin_Models_tblCourse();
+            $course->id = $id;
+            $row = $course->getCourseById();
+            $this->view->row = $row;
+
+            $categoryObj = new Admin_Models_tblCategory();
+            $category = $categoryObj->getCategory();
+            $this->view->category = $category;
+
+            $this->view->render("course/update");
+        }else{
+            $this->redir(URL_BASE . "admin/index/course");
+        }
+    }
+
+    public function updateproccess(){
+        $id = isset($_GET['id']) ? $_GET['id'] : die("Không tồn tại ID khoá học.");
+        if($id!=""){
+            $course = new Admin_Models_tblCourse();
+            $course->id = $id;
+            //Lay du lieu tu controls update form 
+            $course->name = $_POST['name'];
+            $course->description = $_POST['description'];
+            $course->price = $_POST['price'];
+            $course->category_id = $_POST['category_id'];
+            $course->content = $_POST['content'];
+
+            if($course->updateproccess()==true){
+                echo "<script>
+                        alert('Cập nhật khoá học thành công!');
+                      </script>";
+                $this->redir(URL_BASE . "admin/index/course");
+            }else{
+                echo "<script>
+                        alert('Cập nhật khoá học không thành công!');
+                  </script>";
+                $this->redir(URL_BASE. "admin/course/updatecourse/?id=".$id);
+            }
+        }else {
+            echo "<script>
+                        alert('Cập nhật khoá học thất bại!');
+                  </script>";
+            $this->redir(URL_BASE . "admin/index/course");
+        }
+    }
 }
 
 ?>

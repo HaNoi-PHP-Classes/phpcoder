@@ -68,5 +68,42 @@ class Admin_Models_tblCourse extends Libs_Model{
         }
     }
 
+    public function getCourseById(){
+        $query = "SELECT course_id, name, description, content, price, category_id, user_id FROM courses WHERE course_id = ? LIMIT 0,1";
+        $stmt = $this->model->conn->prepare($query);
+
+        $this->id = htmlspecialchars(strip_tags($this->id));
+        $stmt->bindParam(1, $this->id);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row;
+    }
+
+    public function updateproccess(){
+        $query = "UPDATE courses SET name=:name, description=:description, price=:price, content=:content, category_id=:category_id, modified=:modified WHERE course_id=:id";
+        $stmt = $this->model->conn->prepare($query);
+
+        $this->name = htmlspecialchars(strip_tags($this->name));
+        $this->description = htmlspecialchars(strip_tags($this->description));
+        $this->price = htmlspecialchars(strip_tags($this->price));
+        $this->content = $this->content;
+        $this->category_id = htmlspecialchars(strip_tags($this->category_id));
+        $this->id = htmlspecialchars(strip_tags($this->id));
+        $this->timestamp = date('Y-m-d H:i:s');
+
+        $stmt->bindParam(":name",$this->name);
+        $stmt->bindParam(":description", $this->description);
+        $stmt->bindParam(":price", $this->price);
+        $stmt->bindParam(":content", $this->content);
+        $stmt->bindParam(":category_id", $this->category_id);
+        $stmt->bindParam(":id", $this->id);
+        $stmt->bindParam(":modified",$this->timestamp);
+
+        if($stmt->execute()){
+            return true;
+        }else {
+            return false;
+        }
+    }
 
 }

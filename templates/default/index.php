@@ -155,7 +155,7 @@
                                 <h3>Các chủ đề có trong tương lai</h3>
                             </div>
                             <center>
-                            <div id="owl-demo" class="col-sm-12 owl-carousel owl-theme" style="opacity: 1; display: block; text-align:center; padding-left: 0px;">
+                            <div id="owl-demo" class="col-sm-12 owl-carousel owl-theme" style="opacity: 1; display: block; text-align:center; padding-left: 4px;">
                                 <div class="owl-wrapper-outer">
                                     <div class="owl-wrapper" style="display: block;">
                                         <div class="owl-item" style="width: 20%; padding-right: 2%">

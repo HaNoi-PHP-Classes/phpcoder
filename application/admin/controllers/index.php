@@ -33,6 +33,7 @@ class Admin_Controllers_Index extends Libs_Controller{
 
         $this->view->render('index/course');
     }
+
 }
 
 ?>
